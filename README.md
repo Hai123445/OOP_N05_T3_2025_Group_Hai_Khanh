@@ -8,9 +8,9 @@
 
 ```
 
-KháchHàng
-SanPham
-GiaoDịch(Khách hàng uống coffee)
+KháchHàng ( Tên ; Mã kh )
+SanPham (tên sp ; mã sp)
+GiaoDịch(mã gd ; tên kh ; tên sp; số lượng )
 
 
 ```
