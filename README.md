@@ -18,7 +18,7 @@ GiaoDịch(Khách hàng uống coffee)
 
 # Thành viên:
 
-Hải (Mã SV:)
+Trịnh Tiến Hải (Mã SV:24100185)
 Nguyễn Đức Khanh (Mã Sv: 24100401)
 
 
