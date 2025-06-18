@@ -18,11 +18,25 @@ NhanVien ( MaNv ; Ten ; sdt)
 ```
 
 ## Miêu tả
-class KhachHang {
-  int MaKh;
-  string TenKH;
-  string sdt;
-
+nhanvien: 
+ -ten nv:
+ -ma nv:
+ -sdt:
+khachhang:
+ -Ten kh:
+ -Ma kh:
+ -sdt:
+ .
+sanpham:
+ -ten sp:
+ -ma sp:
+ -gia sp:
+ .
+giaodich:
+ -ma gd:
+ -ten kh:
+ -ten sp:
+ -so luong sp:
 # Thành viên:
 
 Trịnh Tiến Hải (Mã SV:24100185)
