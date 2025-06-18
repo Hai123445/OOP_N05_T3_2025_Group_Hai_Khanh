@@ -1,4 +1,4 @@
-public class KhachHang{
+public class SanPham{
     int MaSp;
     String TenSp;
     int GiaSp ;
