@@ -4,6 +4,8 @@
 
 # Describe and Analyse the Project 
 
+## Phân tích
+
 Đối tượng:
 
 ```
@@ -14,6 +16,8 @@ GiaoDịch(mã gd ; tên kh ; tên sp; số lượng )
 NhanVien ( Mã Nv ; tên ; sđt)
 
 ```
+
+## Miêu tả
 
 
 # Thành viên:
