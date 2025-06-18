@@ -10,16 +10,18 @@
 
 ```
 
-KhachHang ( TenKH ; Makh ; sđt )
+KhachHang ( TenKH ; Makh ; sdt )
 SanPham (TenSP ; Masp ; gia)
 GiaoDịch(Magd ; TenKH ; TenSP; soluong )
-NhanVien ( MaNv ; Ten ; sđt)
+NhanVien ( MaNv ; Ten ; sdt)
 
 ```
 
 ## Miêu tả
 class KhachHang {
-  string MaKh
+  int MaKh;
+  string TenKH;
+  string sdt;
 
 # Thành viên:
 
