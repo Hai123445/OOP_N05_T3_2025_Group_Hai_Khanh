@@ -8,8 +8,8 @@
 
 ```
 
-KháchHàng ( Tên ; Mã kh )
-SanPham (tên sp ; mã sp)
+KháchHàng ( Tên ; Mã kh ; sđt )
+SanPham (tên sp ; mã sp ; giá)
 GiaoDịch(mã gd ; tên kh ; tên sp; số lượng )
 
 
