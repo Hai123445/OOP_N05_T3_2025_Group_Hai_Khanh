@@ -10,15 +10,16 @@
 
 ```
 
-KháchHàng ( Tên ; Mã kh ; sđt )
-SanPham (tên sp ; mã sp ; giá)
-GiaoDịch(mã gd ; tên kh ; tên sp; số lượng )
-NhanVien ( Mã Nv ; tên ; sđt)
+KhachHang ( TenKH ; Makh ; sđt )
+SanPham (TenSP ; Masp ; gia)
+GiaoDịch(Magd ; TenKH ; TenSP; soluong )
+NhanVien ( MaNv ; Ten ; sđt)
 
 ```
 
 ## Miêu tả
-
+class KhachHang {
+  string MaKh
 
 # Thành viên:
 
