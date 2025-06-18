@@ -19,7 +19,7 @@ GiaoDịch(Khách hàng uống coffee)
 # Thành viên:
 
 Hải (Mã SV:)
-Khánh (Mã Sv:
+Nguyễn Đức Khanh (Mã Sv: 24100401)
 
 
 Nguyễn Lệ Thu
