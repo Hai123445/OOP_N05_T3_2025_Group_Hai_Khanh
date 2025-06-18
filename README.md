@@ -11,7 +11,7 @@
 KháchHàng ( Tên ; Mã kh ; sđt )
 SanPham (tên sp ; mã sp ; giá)
 GiaoDịch(mã gd ; tên kh ; tên sp; số lượng )
-
+NhanVien ( Mã Nv ; tên ; sđt)
 
 ```
 
