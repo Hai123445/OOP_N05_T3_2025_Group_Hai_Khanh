@@ -1,7 +1,7 @@
 public class Giaodich {
 
     //bien mieu ta cho giao dich
-    Private String MaGiaoDich;
+    private String MaGiaoDich;
     String NgayThangNamGiaoDich;
     String GioGiaoDich;
     double TongTien;
@@ -18,6 +18,7 @@ public void getMaGiaoDich(){
     
 public String setNgayThangNamGiaoDich(String ntngd){
     NgayThangNamGiaoDich = ntngd;
+    return NgayThangNamGiaoDich;
 }
     
 }
