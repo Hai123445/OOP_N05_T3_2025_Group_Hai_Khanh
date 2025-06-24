@@ -1,9 +1,13 @@
 public class testNumber {
 
 public static void test() {
- Number n1 = new Number();
- Number n2 = new Number();
+// Number n1 = new Number();
+ //Number n2 = new Number();
+ Number n3 = new Number(47);
 
+ System.out.println("n3.i =  "+ n3.i);
+
+ /* 
 
  n1.i = 2;
 
@@ -20,7 +24,7 @@ public static void test() {
 
  System.out.println(n2.i);//20 
 
-
+*/
  }
 
 

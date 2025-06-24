@@ -5,9 +5,9 @@ public class Main {
 
         // testKhachhang.test();
 
-        testPassObject.myTest();
+     //   testPassObject.myTest();
 
-        testSanPham.test();
+       // testSanPham.test();
 
     }
 }
