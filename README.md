@@ -40,7 +40,7 @@ giaodich:
 # Thành viên:
 
 Trịnh Tiến Hải (Mã SV:24100185)
-Nguyễn Đức Khanh (Mã Sv: 24100401)
+Nguyễn Đức Khanh (Mã Sv: 24100401; github: duckhanh1301)
 
 
 Nguyễn Lệ Thu
