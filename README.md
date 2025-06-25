@@ -81,7 +81,7 @@ sanpham:
 
 # Thành viên:
 
-Trịnh Tiến Hải (Mã SV:24100185)
+Trịnh Tiến Hải (Mã SV:24100185; github:Hai123445)
 Nguyễn Đức Khanh (Mã Sv: 24100401; github: duckhanh1301)
 
 
