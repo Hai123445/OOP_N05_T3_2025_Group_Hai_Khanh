@@ -12,7 +12,6 @@
 
 KhachHang ( TenKH ; Makh ; sdt )
 SanPham (TenSP ; Masp ; gia)
-GiaoDịch(Magd ; TenKH ; TenSP; soluong )
 NhanVien ( MaNv ; Ten ; sdt)
 
 ```
@@ -36,22 +35,48 @@ public void hienthi(){}
 
 }
 
- ```
+```
 khachhang:
  -Ten kh:
  -Ma kh:
  -sdt:
+```
+public class KhachHang{
+    int MaKh;
+    String TenKh;
+    String sdt;
+
+
+
+    // phuong thuc dac biet vi cung ten voi Lop --> Constructor
+   public KhachHang(int maKh, String tenKh, String sdt) {
+    public void hienthi(){
+    }
+   }
+}
+```
  .
 sanpham:
  -ten sp:
  -ma sp:
  -gia sp:
  .
-giaodich:
- -ma gd:
- -ten kh:
- -ten sp:
- -so luong sp:
+ ```
+ public class SanPham {
+    int MaSp;
+    String TenSp;
+    int GiaSp;
+    // phuong thuc
+
+    // phuong thuc dac biet/constructor co ten trung ten class/ khoi tao Class
+    // SanPham
+    public SanPham(int maSp, String tenSp, int giaSp) {
+    }
+
+    public void In() {
+    }
+}
+ ```
 
 
 # Thành viên:
