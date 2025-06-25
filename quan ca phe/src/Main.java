@@ -5,7 +5,7 @@ public class Main {
 
    testKhachhang.testkh();
    testSanPham.testsp();
-   //testNhanvien.testnv();
+   testNhanvien.testnv();
       
 
     }

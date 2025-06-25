@@ -1,3 +1,4 @@
+/* 
 public class testPassObject {
     public static void myTest() {
 
@@ -12,3 +13,4 @@ public class testPassObject {
         // what is n.i now? 15
     }
 }
+    */

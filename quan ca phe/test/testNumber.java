@@ -1,3 +1,4 @@
+/* 
 public class testNumber {
 
 public static void test() {
@@ -25,11 +26,9 @@ public static void test() {
  System.out.println(n2.i);//20 
 
 */
- }
-
+ 
 
 
 
 
     
-}
