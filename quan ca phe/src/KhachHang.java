@@ -15,6 +15,8 @@ public class KhachHang{
 
 public void hienthi(){
     System.out.println("Ten khach hang: " + TenKh);
+    System.out.println("Ma khach hang:" + MaKh);
+    System.out.println("sdt:" + sdt);
 }
 
 

@@ -13,9 +13,10 @@ public class SanPham {
     }
 
     public void In() {
-        System.out.println("In San Pham");
+        System.out.println("Ten san pham:"+ TenSp);
 
-        System.out.println("Ma san pham: " + MaSp + "Ten San Pham: " + TenSp + "Gia san pham: " + GiaSp);
+        System.out.println("Ma san pham: " + MaSp);
+        System.out.println("Gia san pham: " + GiaSp);
 
     }
 }

@@ -1,8 +1,8 @@
 public class testSanPham {
 
-    public static void test(){
+    public static void testsp(){
 
-        SanPham sp = new SanPham(001, "Xaphong", 1000);
+        SanPham sp = new SanPham(001, "Ca phe", 20000);
         sp.In();
     }
     

@@ -1,15 +1,12 @@
 public class Main {
     public static void main(String[] args) {
 
-       // testNumber.test();
+       
 
-        // testKhachhang.test();
-
-     //   testPassObject.myTest();
-
-       // testSanPham.test();
-
-       testBreakandContinue.test();
+   testKhachhang.testkh();
+   testSanPham.testsp();
+   //testNhanvien.testnv();
+      
 
     }
 }

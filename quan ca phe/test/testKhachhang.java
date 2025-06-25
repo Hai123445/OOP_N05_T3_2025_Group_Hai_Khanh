@@ -1,6 +1,6 @@
 public class testKhachhang {
 
-    public static void test(){ 
+    public static void testkh(){ 
 
 
 
