@@ -6,7 +6,7 @@
 
 ## Phân tích
 
-Đối tượng:
+03 Đối tượng chính:
 
 ```
 
@@ -22,6 +22,21 @@ nhanvien:
  -ten nv:
  -ma nv:
  -sdt:
+
+ ```
+ Public class Nhanvien{
+    int MaNv;
+    String TenNv;
+    String sdt;
+
+    // phuong thuc dac biet vi cung ten voi Lop --> Constructor
+public Nhanvien(int maNv, String tenNv, String sdt) {}
+
+public void hienthi(){}
+
+}
+
+ ```
 khachhang:
  -Ten kh:
  -Ma kh:
@@ -37,6 +52,8 @@ giaodich:
  -ten kh:
  -ten sp:
  -so luong sp:
+
+
 # Thành viên:
 
 Trịnh Tiến Hải (Mã SV:24100185)
