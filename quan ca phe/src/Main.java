@@ -6,7 +6,7 @@ public class Main {
    testKhachhang.testkh();
    testSanPham.testsp();
    testNhanvien.testnv();
-      
+   testGiaodich.testgd();   
 
     }
 }

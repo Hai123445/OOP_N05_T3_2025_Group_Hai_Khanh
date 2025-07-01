@@ -14,4 +14,10 @@ public Giaodich(String mgd,String ngd,String ggd,double tt){
     this.GioGiaoDich = ggd;
     this.TongTien = tt; 
 }
-
+public void hienthi(){
+    System.out.println("Ma giao dich :"  + MaGiaoDich);
+    System.out.println("Ngay thang nam giao dich:" + NgayThangNamGiaoDich);
+    System.out.println("Gio giao dich:" + GioGiaoDich);
+    System.out.println("Tong tien: " + TongTien);
+}
+}
