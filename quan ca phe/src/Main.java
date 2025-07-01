@@ -1,12 +1,12 @@
 public class Main {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-       
+    // testKhachhang.testkh();
+    // testSanPham.testsp();
+    // testNhanvien.testnv();
+    // testGiaodich.testgd();
+    Leaf.test();
 
-   //testKhachhang.testkh();
-   //testSanPham.testsp();
-  // testNhanvien.testnv();
-  // testGiaodich.testgd();   
-   Leaf.test();
-    }
+    Flower.testFlower();
+  }
 }
