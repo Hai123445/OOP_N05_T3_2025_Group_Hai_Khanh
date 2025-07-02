@@ -46,4 +46,3 @@ public class User {
         UserName = name;
         UserAddress = address;
     }
-}

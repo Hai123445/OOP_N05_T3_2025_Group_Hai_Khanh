@@ -8,6 +8,4 @@ public class Main {
     // testNhanvien.testnv();
     // testGiaodich.testgd();
     //Leaf.test();
-    //Flower.testFlower();
-  }
 }
