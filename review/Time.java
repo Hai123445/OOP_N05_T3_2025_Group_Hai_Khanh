@@ -22,7 +22,7 @@ Time() { setTime(0, 0, 0); }
  return this;
  }
  Time setSecond(int s) {
- second = ((s >= 0 && s < 24 ) ? s : 0 );
+ second = ((s >= 0 && s < 60 ) ? s : 0 );
  return this;
  }
  int getHour() { return hour; }
