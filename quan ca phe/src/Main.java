@@ -1,7 +1,7 @@
 public class Main {
   public static void main(String[] args) {
-    //TestUser.Test();
-    //TestRecursion.Test();
+    testUser.test();
+    TestRecursion.Test();
     TestTime.test();
     // testKhachhang.testkh();
     // testSanPham.testsp();
