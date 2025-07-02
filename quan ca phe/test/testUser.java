@@ -1,5 +1,4 @@
 public class testUser {
-
     public static void test() {
         User user = new User();
 
