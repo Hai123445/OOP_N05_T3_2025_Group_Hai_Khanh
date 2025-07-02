@@ -8,6 +8,6 @@ public class Main {
     //Leaf.test();
       TestTime.test();
     //Flower.testFlower();
-    testUser.test1();
+    testUser.test();
   }
 }
