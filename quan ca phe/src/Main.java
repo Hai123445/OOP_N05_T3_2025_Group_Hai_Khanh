@@ -5,8 +5,8 @@ public class Main {
     // testSanPham.testsp();
     // testNhanvien.testnv();
     // testGiaodich.testgd();
-    Leaf.test();
-
-    Flower.testFlower();
+    //Leaf.test();
+      TestTime.test();
+    //Flower.testFlower();
   }
 }
