@@ -41,6 +41,6 @@ giaodich:
 
 Trịnh Tiến Hải (Mã SV:24100185)
 Nguyễn Đức Khanh (Mã Sv: 24100401)
-
+Đinh Đức Thịnh (Mã Sv:24100005)
 
 Nguyễn Lệ Thu
