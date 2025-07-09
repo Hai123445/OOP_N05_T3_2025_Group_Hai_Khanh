@@ -77,7 +77,7 @@ sanpham:
     }
 }
  ```
-
+https://online.visual-paradigm.com/share.jsp?id=343135383732382d31
 https://online.visual-paradigm.com/share.jsp?id=343135383734342d31
 
 # Thành viên:
