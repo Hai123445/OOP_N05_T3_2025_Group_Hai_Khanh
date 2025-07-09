@@ -13,6 +13,7 @@
 KhachHang ( TenKH ; Makh ; sdt )
 SanPham (TenSP ; Masp ; gia)
 NhanVien ( MaNv ; Ten ; sdt)
+Giaodich(MaGd,NgayGD,TenSP,MaSP,TongTien,NvGD)
 
 ```
 
