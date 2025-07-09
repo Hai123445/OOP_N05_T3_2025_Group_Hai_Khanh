@@ -78,6 +78,26 @@ sanpham:
     }
 }
  ```
+public class Giaodich {
+
+    //bien mieu ta cho giao dich
+    String MaGiaoDich;
+    String NgayThangNamGiaoDich;
+    String GioGiaoDich;
+    double TongTien;
+
+
+    //phuong thuc hoat dong
+public Giaodich(String mgd,String ngd,String ggd,double tt){
+    this.MaGiaoDich = mgd;
+    this.NgayThangNamGiaoDich = ngd;
+    this.GioGiaoDich = ggd;
+    this.TongTien = tt; 
+}
+public void hienthi(){
+    
+}
+```
 https://online.visual-paradigm.com/share.jsp?id=343135383732382d31
 https://online.visual-paradigm.com/share.jsp?id=343135383734342d31
 # Sơ đồ hoạt động
