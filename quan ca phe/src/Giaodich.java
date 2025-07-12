@@ -3,21 +3,23 @@ public class Giaodich {
     //bien mieu ta cho giao dich
     String MaGiaoDich;
     String NgayThangNamGiaoDich;
-    String GioGiaoDich;
+    String NhanVienGiaoDich;
     double TongTien;
-
+    int TongSoSp;
 
     //phuong thuc hoat dong
-public Giaodich(String mgd,String ngd,String ggd,double tt){
+public Giaodich(String mgd,String ngd,String nvgd,double tt,int tsp){
     this.MaGiaoDich = mgd;
     this.NgayThangNamGiaoDich = ngd;
-    this.GioGiaoDich = ggd;
-    this.TongTien = tt; 
+    this.NhanVienGiaoDich = nvgd;
+    this.TongTien = tt;
+    this.TongSoSp = tsp; 
 }
 public void hienthi(){
     System.out.println("Ma giao dich :"  + MaGiaoDich);
     System.out.println("Ngay thang nam giao dich:" + NgayThangNamGiaoDich);
-    System.out.println("Gio giao dich:" + GioGiaoDich);
+    System.out.println("Gio giao dich:" + NhanVienGiaoDich);
     System.out.println("Tong tien: " + TongTien);
+     System.out.println("Tong so san pham : " + TongSoSp);
 }
 }
