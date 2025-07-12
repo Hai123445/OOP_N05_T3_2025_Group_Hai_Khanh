@@ -6,7 +6,7 @@
 
 ## Phân tích
 
-03 Đối tượng chính:
+04 Đối tượng chính:
 
 ```
 
