@@ -1,19 +1,23 @@
 public class Nhanvien {
     int MaNv;
     String TenNv;
-    String sdt;
 
-    // phuong thuc dac biet vi cung ten voi Lop --> Constructor
-    public Nhanvien(int maNv, String tenNv, String sdt) {
-        this.MaNv = maNv;
-        this.TenNv = tenNv;
-        this.sdt = sdt;
+    public Nhanvien(int MaNv, String TenNv) {
+        this.MaNv = MaNv;
+        this.TenNv = TenNv;
     }
-
+    public void printTnNV(String TenNv){
+        System.out.println("Ten NV:"+TenNv);
+    }
     public void hienthi() {
-        System.out.println("Ten Nhan vien: " + TenNv);
         System.out.println("Ma Nhan vien:" + MaNv);
-        System.out.println("sdt:" + sdt);
+        System.out.println("Ten Nhan vien: " + TenNv);
     }
-
+    public void SuaNv(String TenMoi){
+        this.TenNv=TenMoi;
+    }
+    public void XoaNv(){
+        this.MaNv=0;
+        this.TenNv="";
+    }
 }
