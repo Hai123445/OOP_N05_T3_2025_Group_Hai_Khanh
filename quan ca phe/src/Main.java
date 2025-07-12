@@ -1,11 +1,8 @@
 public class Main {
   public static void main(String[] args) {
-<<<<<<< HEAD
-    testNhanvien.testnv();
-=======
-    //testUser.test();
-    //TestRecursion.Test();
-    //TestTime.test();
+    testUser.test();
+    TestRecursion.Test();
+    TestTime.test();
     // testKhachhang.testkh();
      testSanPham.testsp();
     // testNhanvien.testnv();
