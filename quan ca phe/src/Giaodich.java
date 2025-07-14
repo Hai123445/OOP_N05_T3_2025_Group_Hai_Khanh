@@ -6,8 +6,7 @@ public class Giaodich {
     String NhanVienGiaoDich;
     double TongTien;
     int TongSoSp;
-
-    //phuong thuc hoat dong
+//phuong thuc hoat dong
 public Giaodich(String mgd,String ngd,String nvgd,double tt,int tsp){
     this.MaGiaoDich = mgd;
     this.NgayThangNamGiaoDich = ngd;
@@ -23,7 +22,7 @@ public void hienthi(){
     System.out.println("Tong tien: " + TongTien);
     System.out.println("Tong so san pham : " + TongSoSp);
 }
-}
+
 //Update 
 public void suaGd(String mgdMoi,String ngdMoi,String nvgdMoi,double ttMoi,int tspMoi){
     this.MaGiaoDich = mgdMoi;
@@ -39,4 +38,5 @@ public void xoaGd(){
     this.NhanVienGiaoDich = "";
     this.TongTien = 0;
     this.TongSoSp = 0;
+}
 }
