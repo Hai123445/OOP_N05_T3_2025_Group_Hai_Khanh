@@ -8,6 +8,6 @@ public class Main {
     // testNhanvien.testnv();
     //testGiaodich.testgd();
     //Leaf.test();
-    NNCollection.insert(1);
+    testCollection.test();
 }
 }
