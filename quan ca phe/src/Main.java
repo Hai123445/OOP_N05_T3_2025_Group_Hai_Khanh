@@ -8,6 +8,7 @@ public class Main {
     // testNhanvien.testnv();
     //testGiaodich.testgd();
     //Leaf.test();
-    testCollection.test();
-}
+    //testCollection.test(); 
+    testBook.test();
+}  
 }

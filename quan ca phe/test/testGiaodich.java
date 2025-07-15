@@ -11,7 +11,7 @@ public class testGiaodich {
         System.out.println("3.Update");
         System.out.println("4.Delete");
         n = scanner.nextInt();
-        Scanner.nextLine();  
+        scanner.nextLine();  
         switch(n){
             case 1 -> themGiaodich();
             case 2 -> docGiaodich();
@@ -31,12 +31,15 @@ public class testGiaodich {
         String nvgd = scanner.nextLine();
         System.out.print("Nhap tong tien");
         Double tt = scanner.nextDouble();
-        System.out.print("Nhap so luong sp")
-        Int tsp = scanner.nextInt();
+        System.out.print("Nhap so luong sp");
+        int tsp = scanner.nextInt();
         scanner.nextLine();
         Giaodich gd = new Giaodich(mgd,ngd,nvgd,tt,tsp);
         dsGiaodich.add(gd);
         System.out.println("Them giao dich thanh cong");
+   }
+   public static void docGiaodich(){
+     gd.hienthi();
    }
 }
 
