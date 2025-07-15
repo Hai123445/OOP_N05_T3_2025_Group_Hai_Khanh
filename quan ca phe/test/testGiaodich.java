@@ -26,6 +26,7 @@ public class testGiaodich {
      }
        while(n != 0);
     }
+    //create
     public static void themGiaodich(){
         System.out.print("Nhap ma giao dich");
         String mgd = scanner.nextLine();
@@ -42,11 +43,13 @@ public class testGiaodich {
         dsGiaodich.add(gd);
         System.out.println("Them giao dich thanh cong");
    }
+   //read
    public static void docGiaodich(){
     for (Giaodich gd : dsGiaodich){
      gd.hienthi();
    }
 }
+//update
    public static void suaGiaodich(){
     String macansua = scanner.nextLine();
     for(Giaodich gd : dsGiaodich){
@@ -67,6 +70,7 @@ public class testGiaodich {
         System.out.println("khong tim thay ma GD");
     }
    }
+   //delete
    public static void xoaGiaodich(){
     String macanxoa = scanner.nextLine();
     for(Giaodich gd : dsGiaodich){
