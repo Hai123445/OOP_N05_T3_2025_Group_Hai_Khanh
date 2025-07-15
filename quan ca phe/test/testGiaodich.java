@@ -10,6 +10,7 @@ public class testGiaodich {
         System.out.println("2.Read");
         System.out.println("3.Update");
         System.out.println("4.Delete");
+        System.out.println("0.Thoat");
         n = scanner.nextInt();
         scanner.nextLine();  
         switch(n){
