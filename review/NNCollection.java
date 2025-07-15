@@ -19,4 +19,10 @@ public String findNumber(String lName) {
  return nnArray[i].getTelNumber();
  return new String("Name not found");
  }
+
+public  void hienthi(){
+    for(int i = 0;i<free;i++){
+    System.out.println(nnArray[i]);
+    }
+}
 }

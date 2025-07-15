@@ -4,6 +4,8 @@ public class testCollection {
         NameNumber n2 = new NameNumber("ascadasnulasdasl", "12546643");
         NNCollection nn = new NNCollection();
         nn.insert(n1);
+        nn.insert(n2);
+        nn.hienthi();
     }
 
 }

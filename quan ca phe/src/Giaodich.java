@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 public class Giaodich {
 
     //bien mieu ta cho giao dich
@@ -6,6 +8,7 @@ public class Giaodich {
     String NhanVienGiaoDich;
     double TongTien;
     int TongSoSp;
+
 //phuong thuc hoat dong
 public Giaodich(String mgd,String ngd,String nvgd,double tt,int tsp){
     this.MaGiaoDich = mgd;
@@ -14,6 +17,7 @@ public Giaodich(String mgd,String ngd,String nvgd,double tt,int tsp){
     this.TongTien = tt;
     this.TongSoSp = tsp; 
 }
+public 
 //Read
 public void hienthi(){
     System.out.println("Ma giao dich :"  + MaGiaoDich);
