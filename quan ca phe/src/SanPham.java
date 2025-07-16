@@ -23,9 +23,9 @@ public class SanPham {
         this.giaSp = giaSp;
     }
     public void printInfo() {
-        System.out.println("Ten san pham:"+ tenSp);
-        System.out.println("Ma san pham: " + maSp);
-        System.out.println("Gia san pham: " + giaSp);
+        System.out.println("Tên sản phẩm:"+ tenSp);
+        System.out.println("Mã sản phẩm: " + maSp);
+        System.out.println("Giá sản phẩm: " + giaSp);
 
     }
     private ArrayList<SanPham> danhSachSp = new ArrayList<>();
@@ -40,11 +40,11 @@ public class SanPham {
 
         SanPham sp = new SanPham(ma, ten, gia);
         danhSachSp.add(sp);
-        System.out.println(" Da them san pham.");
+        System.out.println(" Đã thêm sản phẩm.");
     }
      public void hienThiSanPham() {
         if (danhSachSp.isEmpty()) {
-            System.out.println("Danh sach trong.");
+            System.out.println("Danh sách trống.");
             return;
         }
         for (SanPham sp : danhSachSp) {
@@ -53,33 +53,33 @@ public class SanPham {
         }
     }
     public void suaSanPham() {
-        System.out.println("Nhap ma san pham can sua: ");
+        System.out.println("Nhập mã sản phẩm cần sửa: ");
         String ma = sc.nextLine();
         for (SanPham sp : danhSachSp) {
             if (sp.getMaSp().equals(ma)) {
-                System.out.println("Nhap ten moi");
+                System.out.println("Nhập tên mới");
                 String tenMoi = sc.nextLine();
-                System.out.print("Nhap gia moi: ");
+                System.out.print("Nhập giá mới: ");
                 int giaMoi = Integer.parseInt(sc.nextLine());
                 sp.setTenSp(tenMoi);
                 sp.setGiaSp(giaMoi);
-                System.out.println("Da sua san pham");
+                System.out.println("Đã sửa sản phẩm");
                 return;
 
             }
         }
-        System.out.println("Khong tim thay san pham co ma: " +ma);
+        System.out.println("Không tìm thấy sản phẩm có mã: " +ma);
     }
     public void xoaSanPham() {
-        System.out.println("Nhap ma san pham can xoa");
+        System.out.println("Nhập mã sản phẩm cần xóa");
         String ma = sc.nextLine();
         for (SanPham sp : danhSachSp){
             if (sp.getMaSp().equals(ma)) {
                 danhSachSp.remove(sp);
-                System.out.println("🗑️ Da xoa san pham");
+                System.out.println("🗑️ Đã xóa sản phẩm");
                 return;
             }
         }
-        System.out.println("❌ Khong tim thay san pham co ma: " + ma);
+        System.out.println("❌ Không tìm thấy sản phẩm có mã: " + ma);
     }
 }

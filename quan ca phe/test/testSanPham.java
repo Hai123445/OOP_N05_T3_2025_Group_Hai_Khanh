@@ -7,13 +7,13 @@ public class testSanPham {
         int choice;
 
         do {
-            System.out.println("====== QUAN LY SAN PHAM ======");
-            System.out.println("1. Them san pham");
-            System.out.println("2. Hien thi danh sach san pham");
-            System.out.println("3. Sua san pham");
-            System.out.println("4. Xóa san pham");
-            System.out.println("0. Thoat");
-            System.out.print("Chon chuc nang: ");
+            System.out.println("====== QUẢN LÝ SẢN PHẨM ======");
+            System.out.println("1. Thêm sản phẩm");
+            System.out.println("2. Hiển thị danh sách sản phẩm");
+            System.out.println("3. Sửa sản phẩm");
+            System.out.println("4. Xóa sản phẩm");
+            System.out.println("0. Thoát");
+            System.out.print("Chọn chức năng: ");
             choice = Integer.parseInt(sc.nextLine());
 
             switch (choice) {
@@ -30,10 +30,10 @@ public class testSanPham {
                     quanlySanPham.xoaSanPham();
                     break;
                 case 0:
-                    System.out.println("Thoat chuong trinh.");
+                    System.out.println("Thóat chương trình.");
                     break;
                 default:
-                    System.out.println("Chon chuc nang khong hop le");
+                    System.out.println("Chọn chức năng không hợp lệ");
             }
             System.out.println();
         } while (choice != 0);
