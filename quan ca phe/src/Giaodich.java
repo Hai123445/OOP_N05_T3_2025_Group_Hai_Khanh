@@ -53,21 +53,4 @@ public void hienthi(){
     System.out.println("Tong tien: " + TongTien);
     System.out.println("Tong so san pham : " + TongSoSp);
 }
-
-//Update 
-public void suaGd(String mgdMoi,String ngdMoi,String nvgdMoi,double ttMoi,int tspMoi){
-    this.MaGiaoDich = mgdMoi;
-    this.NgayThangNamGiaoDich = ngdMoi;
-    this.NhanVienGiaoDich = nvgdMoi;
-    this.TongTien = ttMoi;
-    this.TongSoSp = tspMoi; 
-}
-//Delete
-public void xoaGd(){
-    this.MaGiaoDich = "";
-    this.NgayThangNamGiaoDich = "";
-    this.NhanVienGiaoDich = "";
-    this.TongTien = 0;
-    this.TongSoSp = 0;
-}
 }
