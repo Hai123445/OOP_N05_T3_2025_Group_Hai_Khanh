@@ -5,7 +5,7 @@ public class Main {
     //TestTime.test();
     // testKhachhang.testkh();
      //testSanPham.testsp();
-     testNhanvien.menu();1
+     testNhanvien.menu();
     //testGiaodich.menu();
     //Leaf.test();
     //testCollection.test(); 
