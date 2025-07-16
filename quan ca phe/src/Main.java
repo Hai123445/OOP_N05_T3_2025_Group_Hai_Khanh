@@ -3,10 +3,10 @@ public class Main {
     //testUser.test();
    // TestRecursion.Test();
     //TestTime.test();
-    // testKhachhang.testkh();
+    testKhachhang.testkh();
      //testSanPham.testsp();
     // testNhanvien.testnv();
-    testGiaodich.menu();
+    //testGiaodich.menu();
     //Leaf.test();
     //testCollection.test(); 
     //testBook.test();
