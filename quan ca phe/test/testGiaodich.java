@@ -74,7 +74,7 @@ public class testGiaodich {
    public static void xoaGiaodich(){
     String macanxoa = scanner.nextLine();
     for(Giaodich gd : dsGiaodich){
-        if(gd.getMgd().equalsIgnoreCase(macanxoa)){
+        if(gd.getMgd().equals(macanxoa)){
                 dsGiaodich.remove(gd);
               return;
     }
