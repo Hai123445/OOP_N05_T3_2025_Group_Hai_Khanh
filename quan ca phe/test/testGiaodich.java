@@ -28,15 +28,15 @@ public class testGiaodich {
     }
     //create
     public static void themGiaodich(){
-        System.out.print("Nhap ma giao dich");
+        System.out.print("Nhap ma giao dich: ");
         String mgd = scanner.nextLine();
-        System.out.print("Nhap ngay giao dich");
+        System.out.print("Nhap ngay giao dich: ");
         String ngd = scanner.nextLine();
-        System.out.print("Nhap nhan vien giao dich");
+        System.out.print("Nhap nhan vien giao dich: ");
         String nvgd = scanner.nextLine();
-        System.out.print("Nhap tong tien");
+        System.out.print("Nhap tong tien: ");
         Double tt = scanner.nextDouble();
-        System.out.print("Nhap so luong sp");
+        System.out.print("Nhap so luong sp: ");
         int tsp = scanner.nextInt();
         scanner.nextLine();
         Giaodich gd = new Giaodich(mgd,ngd,nvgd,tt,tsp);
@@ -54,15 +54,15 @@ public class testGiaodich {
     String macansua = scanner.nextLine();
     for(Giaodich gd : dsGiaodich){
         if(gd.getMgd().equalsIgnoreCase(macansua)){
-            System.out.print("Nhap ma ");
+            System.out.print("Nhap ma: ");
             gd.setMgd(scanner.nextLine());
-            System.out.print("Nhap ngay");
+            System.out.print("Nhap ngay: ");
             gd.setNgd(scanner.nextLine());
-            System.out.print("Nhap nhan vien");
+            System.out.print("Nhap nhan vien: ");
             gd.setNvgd(scanner.nextLine());
-            System.out.print("nhap tong tien");
+            System.out.print("nhap tong tien: ");
             gd.setTt(scanner.nextDouble());
-            System.out.print("Nhap tong sp");
+            System.out.print("Nhap tong sp: ");
             gd.setTsp(scanner.nextInt());
             scanner.nextLine();
             return; 
@@ -74,7 +74,7 @@ public class testGiaodich {
    public static void xoaGiaodich(){
     String macanxoa = scanner.nextLine();
     for(Giaodich gd : dsGiaodich){
-        if(gd.getMgd().equalsIgnoreCase(macanxoa)){
+        if(gd.getMgd().equals(macanxoa)){
                 dsGiaodich.remove(gd);
               return;
     }
