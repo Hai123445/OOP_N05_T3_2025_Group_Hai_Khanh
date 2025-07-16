@@ -20,8 +20,7 @@ public class testNhanvien {
             switch (chon) {
                 case 1:
                     System.out.print("Nhập mã NV: ");
-                    int ma = scanner.nextInt();
-                    scanner.nextLine();
+                    String ma = scanner.nextLine();
                     System.out.print("Nhập tên NV: ");
                     String ten = scanner.nextLine();
                     danhSachNV.add(new Nhanvien(ma, ten));
@@ -37,11 +36,10 @@ public class testNhanvien {
 
                 case 3:
                     System.out.print("Nhập mã NV cần sửa: ");
-                    int maSua = scanner.nextInt();
-                    scanner.nextLine();
+                    String maSua = scanner.nextLine();
                     boolean foundSua = false;
                     for (Nhanvien nv : danhSachNV) {
-                        if (nv.MaNv == maSua) {
+                        if (nv.MaNv.equals(maSua)) {
                             System.out.print("Nhập tên mới: ");
                             String tenMoi = scanner.nextLine();
                             nv.suaNV(tenMoi);
@@ -57,7 +55,7 @@ public class testNhanvien {
 
                 case 4:
                     System.out.print("Nhập mã NV cần xóa: ");
-                    int maXoa = scanner.nextInt();
+                    String maXoa = scanner.nextLine();
                     boolean foundXoa = false;
                     for (int i = 0; i < danhSachNV.size(); i++) {
                         if (danhSachNV.get(i).MaNv == maXoa) {
