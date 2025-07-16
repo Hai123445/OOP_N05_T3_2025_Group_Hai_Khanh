@@ -76,7 +76,7 @@ public String getMgd(){
    public static void suaGiaodich(){
     String macansua = scanner.nextLine();
     for(Giaodich gd : dsGiaodich){
-        if(gd.getMgd().equalsIgnoreCase(macansua)){
+        if(gd.getMgd().equals(macansua)){
             System.out.print("Nhap ma: ");
             gd.setMgd(scanner.nextLine());
             System.out.print("Nhap ngay: ");
