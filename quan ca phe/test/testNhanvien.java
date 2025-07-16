@@ -58,7 +58,7 @@ public class testNhanvien {
                     String maXoa = scanner.nextLine();
                     boolean foundXoa = false;
                     for (int i = 0; i < danhSachNV.size(); i++) {
-                        if (danhSachNV.get(i).MaNv == maXoa) {
+                        if (danhSachNV.get(i).MaNv.equals(maXoa)) {
                             danhSachNV.remove(i);
                             foundXoa = true;
                             System.out.println("Đã xóa nhân viên.");
