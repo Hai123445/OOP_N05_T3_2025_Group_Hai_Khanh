@@ -1,9 +1,7 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 public class testGiaodich {
  static Scanner scanner = new Scanner(System.in);
- static ArrayList<Giaodich> dsGiaodich = new ArrayList<>();
-    public static void testgd(){
+   public static void testgd(){
         int n;
         do{
         System.out.println("1.Create");

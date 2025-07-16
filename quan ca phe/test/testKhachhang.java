@@ -1,9 +1,7 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 public class testKhachhang {
 static Scanner scanner = new Scanner(System.in);
- static ArrayList<KhachHang> dsKhachhang = new ArrayList<>();
-    public static void testkh(){
+   public static void testkh(){
         int n;
         do{
         System.out.println("1.Create");
