@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 public class Nhanvien {
     int MaNv;
     String TenNv;
@@ -20,7 +22,7 @@ public class Nhanvien {
         this.MaNv=0;
         this.TenNv="";
     }
-public static void main(String[] args) {
+public static void Danhsach() {
         ArrayList<Nhanvien> danhSachNV = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         int chon;
