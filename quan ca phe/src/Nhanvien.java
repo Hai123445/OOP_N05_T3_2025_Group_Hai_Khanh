@@ -1,8 +1,8 @@
 public class Nhanvien {
-    int MaNv;
+    String MaNv;
     String TenNv;
 
-    public Nhanvien(int maNv, String tenNv) {
+    public Nhanvien(String maNv, String tenNv) {
         this.MaNv = maNv;
         this.TenNv = tenNv;
     }
@@ -17,7 +17,7 @@ public class Nhanvien {
         this.TenNv=tenMoi;
     }
     public void xoaNV(){
-        this.MaNv=0;
+        this.MaNv="";
         this.TenNv="";
     }
 }    
