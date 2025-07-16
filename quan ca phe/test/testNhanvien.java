@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class testNhanvien{
-    ArrayList<Nhanvien> danhSachNV = new ArrayList<>();
-    Scanner scanner = new Scanner(System.in);
+public class testNhanvien {
+    static ArrayList<Nhanvien> danhSachNV = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
     public static void menu(){
         int chon;
         do {
