@@ -24,4 +24,4 @@ static Scanner scanner = new Scanner(System.in);
      }
        while(n != 0);
     }
-   
+}
