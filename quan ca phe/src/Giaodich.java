@@ -88,7 +88,7 @@ public String getMgd(){
             System.out.print("Nhap tong sp moi: ");
             gd.setTsp(scanner.nextInt());
             scanner.nextLine();
-            return; 
+            break; 
         }
         System.out.println("khong tim thay ma GD");
     }
@@ -99,7 +99,7 @@ public String getMgd(){
     for(Giaodich gd : dsGiaodich){
         if(gd.getMgd().equals(macanxoa)){
                 dsGiaodich.remove(gd);
-              return;
+              break;
     }
     System.err.println("khong tim thay ma GD");
 }
