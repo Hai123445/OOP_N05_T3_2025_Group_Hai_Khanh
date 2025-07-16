@@ -77,15 +77,15 @@ public String getMgd(){
     String macansua = scanner.nextLine();
     for(Giaodich gd : dsGiaodich){
         if(gd.getMgd().equals(macansua)){
-            System.out.print("Nhap ma: ");
+            System.out.print("Nhap ma moi: ");
             gd.setMgd(scanner.nextLine());
-            System.out.print("Nhap ngay: ");
+            System.out.print("Nhap ngay moi: ");
             gd.setNgd(scanner.nextLine());
-            System.out.print("Nhap nhan vien: ");
+            System.out.print("Nhap nhan vien moi: ");
             gd.setNvgd(scanner.nextLine());
-            System.out.print("nhap tong tien: ");
+            System.out.print("nhap tong tien moi: ");
             gd.setTt(scanner.nextDouble());
-            System.out.print("Nhap tong sp: ");
+            System.out.print("Nhap tong sp moi: ");
             gd.setTsp(scanner.nextInt());
             scanner.nextLine();
             return; 
