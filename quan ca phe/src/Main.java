@@ -5,8 +5,8 @@ public class Main {
     //TestTime.test();
     // testKhachhang.testkh();
      //testSanPham.testsp();
-    // testNhanvien.testnv();
-    testGiaodich.menu();
+     testNhanvien.menu();1
+    //testGiaodich.menu();
     //Leaf.test();
     //testCollection.test(); 
     //testBook.test();
