@@ -4,12 +4,12 @@ public class Main {
    // TestRecursion.Test();
     //TestTime.test();
     // testKhachhang.testkh();
-     testSanPham.test();
+     //testSanPham.test();
      //testNhanvien.menu();
     //testGiaodich.testgd();
     //Leaf.test();
     //testCollection.test(); 
     //testBook.test();
-
+     Tune.play();
 }  
 }
