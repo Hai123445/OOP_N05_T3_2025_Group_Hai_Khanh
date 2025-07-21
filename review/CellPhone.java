@@ -1,4 +1,4 @@
 public class CellPhone {
- cellPhone() { }
+ CellPhone() { }
  public void ring(Tune t) { t.play(); }
  }
