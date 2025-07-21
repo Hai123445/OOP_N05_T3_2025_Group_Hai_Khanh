@@ -4,7 +4,8 @@ public class Main {
    // TestRecursion.Test();
     //TestTime.test();
     // testKhachhang.testkh();
-    // testNhanvien.menu();
+     //testSanPham.testsp();
+     testNhanvien.menu();
     //testGiaodich.menu();
     //Leaf.test();
     //testCollection.test(); 
