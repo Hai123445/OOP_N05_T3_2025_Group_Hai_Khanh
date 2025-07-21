@@ -18,7 +18,7 @@ public class testSanPham {
 
             switch (choice) {
                 case 1:
-                    quanlySanPham.themSanPham();
+                   quanlySanPham.themSanPham();
                     break;
                 case 2:
                     quanlySanPham.hienThiSanPham();

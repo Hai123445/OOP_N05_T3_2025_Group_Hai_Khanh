@@ -71,7 +71,4 @@ public void hienthi(){
     System.out.println("Ma khach hang:" + MaKh);
     System.out.println("sdt:" + sdt);
 }
-
-
-
 }
