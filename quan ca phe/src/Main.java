@@ -6,19 +6,10 @@ public class Main {
     // testKhachhang.testkh();
      //testSanPham.testsp();
      //testNhanvien.menu();
-<<<<<<< HEAD
-    //testGiaodich.testgd();
+    testGiaodich.testgd();
     //Leaf.test();
     //testCollection.test(); 
     //testBook.test();
-    DisruptLecture.testTune();
 
-=======
-    //testGiaodich.menu();
-    //Leaf.test();
-    //testCollection.test(); 
-    //testBook.test();
-    TestCellPhone.test();
->>>>>>> 4cd2e7755210192f4bd9284788fcab09c7e75f49
 }  
 }
