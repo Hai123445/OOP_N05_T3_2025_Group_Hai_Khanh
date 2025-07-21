@@ -10,6 +10,6 @@ public class Main {
     //Leaf.test();
     //testCollection.test(); 
     //testBook.test();
-     
+     TestCellPhone.test();
 }  
 }
