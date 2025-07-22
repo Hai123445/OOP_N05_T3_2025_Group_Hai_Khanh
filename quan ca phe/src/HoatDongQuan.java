@@ -12,14 +12,14 @@ public class HoatDongQuan {
         this.gd = gd;
         this.sp = sp;
     }
-    static ArrayList<Giaodich> dsGiaodich = new ArrayList<>();
+    
     static Scanner scanner = new Scanner(System.in); 
     static ArrayList<Giaodich>  dstrongngay = new ArrayList<>();
     public static void hienthigdtrongngay(){
    String ngaycantim = scanner.nextLine();
    String nvcantim = scanner.nextLine();
    dstrongngay.clear();
-   for(Giaodich gd : dsGiaodich) {
+   for(Giaodich gd : Giaodich.dsGiaodich) {
        if(gd.getNgd().equals(ngaycantim)&&gd.getNvgd().equals(nvcantim)){
           dstrongngay.add(gd);
        }
