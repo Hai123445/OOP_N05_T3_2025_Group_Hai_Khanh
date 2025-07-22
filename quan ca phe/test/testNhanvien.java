@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class testNhanvien {
     static ArrayList<Nhanvien> danhSachNV = new ArrayList<>();
+    static ArrayList<Giaodich> dsGiaodich = new ArrayList<>();
+    static ArrayList<SanPham> dsSanpham = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
     public static void menu(){
         int chon;
@@ -13,6 +15,8 @@ public class testNhanvien {
             System.out.println("3. Sửa tên nhân viên theo mã");
             System.out.println("4. Xóa nhân viên theo mã");
             System.out.println("5. Tính lương nhân viên theo mã");
+            System.out.println("6. Thống kê giao dịch");
+            System.out.println("7. Thêm giao dịch");
             System.out.println("0. Thoát");
             System.out.print("Chọn chức năng: ");
             chon = scanner.nextInt();
@@ -90,6 +94,12 @@ public class testNhanvien {
                         System.out.println("Không tìm thấy nhân viên!");
                     }
                     break;
+                case 6:
+                    ThongKe.thongKeGiaoDich(dsGiaodich, danhSachNV, dsSanpham);
+                    break;
+                case 7:
+                    ThongKe.themGiaoDich(dsGiaodich, danhSachNV);
+                    break;    
 
                 case 0:
                     System.out.println("Thoát chương trình.");
