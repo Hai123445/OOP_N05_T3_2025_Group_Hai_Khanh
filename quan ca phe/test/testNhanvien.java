@@ -12,6 +12,7 @@ public class testNhanvien {
             System.out.println("2. Hiển thị danh sách nhân viên");
             System.out.println("3. Sửa tên nhân viên theo mã");
             System.out.println("4. Xóa nhân viên theo mã");
+            System.out.println("5. Tính lương nhân viên theo mã");
             System.out.println("0. Thoát");
             System.out.print("Chọn chức năng: ");
             chon = scanner.nextInt();
@@ -66,6 +67,26 @@ public class testNhanvien {
                         }
                     }
                     if (!foundXoa) {
+                        System.out.println("Không tìm thấy nhân viên!");
+                    }
+                    break;
+
+                case 5:
+                    System.out.println("Nhập mã NV cần tính lương: ");
+                    String maLuong = scanner.nextLine();
+                    boolean found = false;
+                    for (Nhanvien nv : danhSachNV) {
+                        if (nv.MaNv.equals(maLuong)) {
+                            System.out.print("Nhập số giờ làm: ");
+                            double gio = scanner.nextDouble();
+                            scanner.nextLine();
+                            double luong = nv.tinhLuong(gio);
+                            System.out.println("Lương của nhân viên là: " + luong + " VND");
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found){
                         System.out.println("Không tìm thấy nhân viên!");
                     }
                     break;
