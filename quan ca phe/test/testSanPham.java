@@ -32,7 +32,7 @@ public class testSanPham {
                     quanlySanPham.xoaSanPham();
                     break;
                 case 5:
-                    TimKiemSanPhamTheoTen.timKiemTheoTen(SanPham.getDanhSachSp(), sc);
+                    HoatDongQuan.timKiemTheoTen(SanPham.getDanhSachSp(), sc);
                     break;
                 case 0:
                     System.out.println("Thóat chương trình.");
