@@ -107,6 +107,21 @@ https://online.visual-paradigm.com/share.jsp?id=343135383734342d31
 <img src="images/sanpham.png">
 <img src="images/GiaoDich.png">
 <img src="images/NhanVien.png">
+#Yêu cầu 5
+1. Phương thức hiển thị giao dịch theo ngày và nhân viên
+   Phương thức tìm kiếm sản phẩm theo tên
+   Phương 
+2.class HoatDongQuan(){
+public Nhanvien nv;
+    public KhachHang kh;
+    public Giaodich gd;
+    public SanPham sp;
+
+public static void hienthigdtrongngay(){
+   }
+public static void timKiemTheoTen(ArrayList<SanPham> danhSachSanPham, Scanner sc) {
+    }
+<img width="1865" height="933" alt="image" src="https://github.com/user-attachments/assets/1b92ce77-5153-4a2c-9c8f-26c1f58c7930" />
 
 # Thành viên:
 
