@@ -121,7 +121,7 @@ public static void hienthigdtrongngay(){
    }
 public static void timKiemTheoTen(ArrayList<SanPham> danhSachSanPham, Scanner sc) {
     }
-<img width="1865" height="933" alt="image" src="https://github.com/user-attachments/assets/1b92ce77-5153-4a2c-9c8f-26c1f58c7930" />
+
 
 # Thành viên:
 
