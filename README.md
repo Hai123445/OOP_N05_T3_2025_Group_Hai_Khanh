@@ -113,6 +113,7 @@ https://online.visual-paradigm.com/share.jsp?id=343135383734342d31
 2. Phương thức tìm kiếm sản phẩm theo tên
 3. Phương 
 2.class HoatDongQuan(){
+
 public Nhanvien nv;
     public KhachHang kh;
     public Giaodich gd;
@@ -121,7 +122,7 @@ public Nhanvien nv;
 public static void hienthigdtrongngay(){
    }
 public static void timKiemTheoTen(ArrayList<SanPham> danhSachSanPham, Scanner sc) {
-    }
+   }
 
 
 # Thành viên:
