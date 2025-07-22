@@ -6,11 +6,11 @@ public class Main {
     // testKhachhang.testkh();
      //testSanPham.testsp();
      //testNhanvien.menu();
-    testGiaodich.testgd();
+    //testGiaodich.testgd();
     //Leaf.test();
     //testCollection.test(); 
     //testBook.test();
-    //testSanPham.test();
+    testSanPham.test();
     
 }  
 }

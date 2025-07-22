@@ -106,7 +106,23 @@ https://online.visual-paradigm.com/share.jsp?id=343135383734342d31
 <img src="images/Untitled.png">
 <img src="images/sanpham.png">
 <img src="images/GiaoDich.png">
-<img src="images/NhanVien.png">
+<img src="images/NhanVien.png"> 
+
+# 5 phương thức hoạt động trong ứng dụng quản lí quán cà phê
+1. Phương thức hiển thị giao dịch theo ngày và nhân viên
+2. Phương thức tìm kiếm sản phẩm theo tên
+3. Phương 
+2.class HoatDongQuan(){
+public Nhanvien nv;
+    public KhachHang kh;
+    public Giaodich gd;
+    public SanPham sp;
+
+public static void hienthigdtrongngay(){
+   }
+public static void timKiemTheoTen(ArrayList<SanPham> danhSachSanPham, Scanner sc) {
+    }
+
 
 # Thành viên:
 
