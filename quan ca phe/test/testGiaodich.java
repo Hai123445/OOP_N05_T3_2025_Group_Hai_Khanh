@@ -8,6 +8,7 @@ public class testGiaodich {
         System.out.println("2.Read");
         System.out.println("3.Update");
         System.out.println("4.Delete");
+        System.out.println("5.Hiển thị ds trong ngày theo nv");
         System.out.println("0.Thoat");
         n = scanner.nextInt();
         scanner.nextLine();  
@@ -16,6 +17,7 @@ public class testGiaodich {
             case 2 : Giaodich.docGiaodich(); break;
             case 3 : Giaodich.suaGiaodich(); break;
             case 4 : Giaodich.xoaGiaodich(); break;
+            case 5 : HoatDongQuan.hienthigdtrongngay(); break;
             case 0 : System.out.println("Thoat menu"); break;
             default : System.out.println("Lua chon khong hop le"); break;
         }
