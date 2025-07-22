@@ -2,16 +2,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TimKiemSanPhamTheoTen {
-
-    public static void timKiemTheoTen(ArrayList<SanPham> danhSachSanPham, Scanner scanner) {
+    // Phương thức tìm kiếm sản phẩm theo tên
+    public static void timKiemTheoTen(ArrayList<SanPham> danhSachSanPham, Scanner sc) {
         System.out.print("Nhập tên sản phẩm cần tìm: ");
-        String tenCanTim = scanner.nextLine().toLowerCase();
+        String tenCanTim = sc.nextLine().toLowerCase(); // nhập tên cần tìm và chuyển về chữ thường
 
         boolean timThay = false;
+
         for (SanPham sp : danhSachSanPham) {
             if (sp.getTenSp().toLowerCase().contains(tenCanTim)) {
                 System.out.println("Tìm thấy sản phẩm:");
-                sp.inThongTin();
+                sp.inThongTin(); // gọi hàm hiển thị sản phẩm
                 timThay = true;
             }
         }

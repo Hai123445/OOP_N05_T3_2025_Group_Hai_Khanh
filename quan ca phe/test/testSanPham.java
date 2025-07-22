@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class testSanPham {
@@ -12,6 +13,7 @@ public class testSanPham {
             System.out.println("2. Hiển thị danh sách sản phẩm");
             System.out.println("3. Sửa sản phẩm");
             System.out.println("4. Xóa sản phẩm");
+            System.out.println("5. Tìm kiếm sản phẩm theo tên");
             System.out.println("0. Thoát");
             System.out.print("Chọn chức năng: ");
             choice = Integer.parseInt(sc.nextLine());
@@ -28,6 +30,9 @@ public class testSanPham {
                     break;
                 case 4:
                     quanlySanPham.xoaSanPham();
+                    break;
+                case 5:
+                    TimKiemSanPhamTheoTen.timKiemTheoTen(SanPham.getDanhSachSp(), sc);
                     break;
                 case 0:
                     System.out.println("Thóat chương trình.");
