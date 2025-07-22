@@ -16,6 +16,15 @@ public class SanPham {
         return maSp;
     }
 
+    public String getTenSp() {
+        return tenSp;
+    }
+
+     public int getGiaSp() {
+        return giaSp;
+    }
+
+
     public void setTenSp(String tenSp) {
         this.tenSp = tenSp;
     }
@@ -30,8 +39,16 @@ public class SanPham {
         System.out.println("Giá sản phẩm: " + giaSp);
     }
 
-    private ArrayList<SanPham> danhSachSp = new ArrayList<>();
-    private Scanner sc = new Scanner(System.in);
+    public static ArrayList<SanPham> danhSachSp = new ArrayList<>();
+    public Scanner sc = new Scanner(System.in);
+
+    public static ArrayList<SanPham> getDanhSachSp() {
+        return danhSachSp;
+    }
+
+    public void inThongTin() {
+        System.out.println("Mã: " + maSp + ", Tên: " + tenSp + ", Giá: " + giaSp);
+    }
 
     // Phương thức thêm sản phẩm
     public void themSanPham() {
