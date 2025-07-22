@@ -12,7 +12,8 @@ public class ThongKe {
         String ten = scanner.nextLine();
         System.out.print("Nhập giá sản phẩm: ");
         double gia = scanner.nextDouble();
-        scanner.nextLine(); // clear buffer
+        scanner.nextLine(); // clear buffer6
+        
 
         dsSanpham.add(new SanPham(ma, ten, gia));
         System.out.println("✅ Đã thêm sản phẩm.");
