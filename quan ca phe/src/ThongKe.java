@@ -5,7 +5,7 @@ public class ThongKe {
     static Scanner scanner = new Scanner(System.in);
 
     public static void themSanPham(ArrayList<SanPham> dsSanpham) {
-        System.out.println("\n--- THÊM SẢN PHẨM ---");
+        System.out.println("--- THÊM SẢN PHẨM ---");
         System.out.print("Nhập mã sản phẩm: ");
         String ma = scanner.nextLine();
         System.out.print("Nhập tên sản phẩm: ");
