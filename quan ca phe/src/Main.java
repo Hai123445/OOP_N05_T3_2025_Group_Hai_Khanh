@@ -11,6 +11,6 @@ public class Main {
     //testCollection.test(); 
     //testBook.test();
     //testSanPham.test();
-    
+  TestStudent.teststudent();
 }  
 }
