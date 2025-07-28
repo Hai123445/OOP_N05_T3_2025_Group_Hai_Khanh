@@ -112,7 +112,7 @@ https://online.visual-paradigm.com/share.jsp?id=343135383734342d31
 1. Phương thức hiển thị giao dịch theo ngày và nhân viên
 2. Phương thức tìm kiếm sản phẩm theo tên
 3. Phương 
-2.class HoatDongQuan(){
+2.class HoatDongQuan()
 
 public Nhanvien nv;
     public KhachHang kh;
