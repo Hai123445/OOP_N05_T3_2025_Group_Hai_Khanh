@@ -15,7 +15,7 @@ public class ThongKe {
         scanner.nextLine(); // clear buffer6
         
 
-        dsSanpham.add(new SanPham(String maSp,String tenSp,int giaSp));
+        dsSanpham.add(new SanPham(ma,ten,(int)gia));
         System.out.println("Đã thêm sản phẩm.");
     }
 
