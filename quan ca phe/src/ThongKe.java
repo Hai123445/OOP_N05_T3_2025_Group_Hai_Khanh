@@ -91,7 +91,7 @@ public class ThongKe {
             if (dsSanpham != null && !dsSanpham.isEmpty()) {
                 System.out.println(" Danh sách sản phẩm hiện tại:");
                 for (SanPham sp : dsSanpham) {
-                    System.out.println("   ➤ " + sp.tenSp + " | Mã: " + sp.maSp + " | Giá: " + sp.giaSp);
+                    System.out.println(" >  " + sp.tenSp + " | Mã: " + sp.maSp + " | Giá: " + sp.giaSp);
                 }
             } else {
                 System.out.println(" Danh sách sản phẩm trống.");
