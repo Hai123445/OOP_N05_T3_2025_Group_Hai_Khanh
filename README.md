@@ -10,7 +10,7 @@
 
 ```
 
-KhachHang ( TenKH ; Makh ; sdt )
+KhachHang ( TenKH ; Makh ; luongTheoGio )
 SanPham (TenSP ; Masp ; gia)
 NhanVien ( MaNv ; Ten ; sdt)
 Giaodich(MaGd,NgayGD,TenSP,MaSP,TongTien,NvGD)
@@ -21,16 +21,16 @@ Giaodich(MaGd,NgayGD,TenSP,MaSP,TongTien,NvGD)
 nhanvien: 
  -ten nv:
  -ma nv:
- -sdt:
+ -luongTheoGio:
 
  ```
  Public class Nhanvien{
     int MaNv;
     String TenNv;
-    String sdt;
+    double luongTheoGio;
 
     // phuong thuc dac biet vi cung ten voi Lop --> Constructor
-public Nhanvien(int maNv, String tenNv, String sdt) {}
+public Nhanvien(int maNv, String tenNv,) {}
 
 public void hienthi(){}
 
