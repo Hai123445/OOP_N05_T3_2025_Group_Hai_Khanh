@@ -78,7 +78,7 @@ sanpham:
     }
 }
  ```
-public class Giaodich {
+public class Giaodich 
 
     //bien mieu ta cho giao dich
     String MaGiaoDich;
