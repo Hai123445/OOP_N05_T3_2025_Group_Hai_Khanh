@@ -16,7 +16,7 @@ public class ThongKe {
         
 
         dsSanpham.add(new SanPham(ma, ten, gia));
-        System.out.println("✅ Đã thêm sản phẩm.");
+        System.out.println("Đã thêm sản phẩm.");
     }
 
     public static void themGiaoDich(
@@ -40,7 +40,7 @@ public class ThongKe {
             }
         }
         if (!foundNv) {
-            System.out.println("❌ Mã nhân viên không tồn tại.");
+            System.out.println(" Mã nhân viên không tồn tại.");
             return;
         }
 
@@ -51,7 +51,7 @@ public class ThongKe {
         scanner.nextLine(); // clear buffer
 
         dsGiaodich.add(new Giaodich(mgd, ngd, nvgd, tt, tsp));
-        System.out.println("✅ Đã thêm giao dịch.");
+        System.out.println(" Đã thêm giao dịch.");
     }
 
     public static void thongKeGiaoDich(
@@ -60,7 +60,7 @@ public class ThongKe {
             ArrayList<SanPham> dsSanpham
     ) {
         if (dsGiaodich == null || dsGiaodich.isEmpty()) {
-            System.out.println("❌ Không có giao dịch nào để thống kê.");
+            System.out.println(" Không có giao dịch nào để thống kê.");
             return;
         }
 
