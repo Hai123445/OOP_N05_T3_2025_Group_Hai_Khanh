@@ -12,7 +12,7 @@ public class ThongKe {
         String ten = scanner.nextLine();
         System.out.print("Nhập giá sản phẩm: ");
         double gia = scanner.nextDouble();
-        scanner.nextLine(); // clear buffer6
+        scanner.nextLine(); // clear buffer
         
 
         dsSanpham.add(new SanPham(ma,ten,(int)gia));
@@ -48,7 +48,7 @@ public class ThongKe {
         double tt = scanner.nextDouble();
         System.out.print("Nhập tổng số sản phẩm: ");
         int tsp = scanner.nextInt();
-        scanner.nextLine(); // clear buffer
+        scanner.nextLine();
 
         dsGiaodich.add(new Giaodich(mgd, ngd, nvgd, tt, tsp));
         System.out.println(" Đã thêm giao dịch.");
