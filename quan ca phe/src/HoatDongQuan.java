@@ -15,6 +15,28 @@ public class HoatDongQuan {
     
     static Scanner scanner = new Scanner(System.in); 
     static ArrayList<Giaodich>  dstrongngay = new ArrayList<>();
+    public static void quanly(){
+     int n;
+     n = scanner.nextInt();
+     scanner.nextLine();
+     do{
+        System.out.println("1.Quản lý Khách Hàng");
+        System.out.println("2.Quản lý Sản Phẩm");
+        System.out.println("3.Quản lý Nhân Viên");
+        System.out.println("4.Quản lý Giao Dịch");
+        System.out.println("5.Thoát");
+        switch (n) {
+            case 1: testKhachhang.testkh(); break;
+            case 2: testSanPham.test(); break;
+            case 3: testNhanvien.menu(); break;
+            case 4: testGiaodich.testgd(); break;
+            case 5 : System.out.println("Thoát menu"); break;
+            default : System.out.println("Lựa chọn không hợp lệ"); break;
+            }
+      }
+        while (n != 0);
+            
+         }
     public static void hienthigdtrongngay(){
    String ngaycantim = scanner.nextLine();
    String nvcantim = scanner.nextLine();
