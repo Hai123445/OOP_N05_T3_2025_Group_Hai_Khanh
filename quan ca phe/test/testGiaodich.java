@@ -4,12 +4,12 @@ public class testGiaodich {
    public static void testgd(){
         int n;
         do{
-        System.out.println("1.Create");
-        System.out.println("2.Read");
-        System.out.println("3.Update");
-        System.out.println("4.Delete");
+        System.out.println("1.Thêm giao dịch");
+        System.out.println("2.Hiển thị giao dịch");
+        System.out.println("3.Cập nhật giao dịch");
+        System.out.println("4.Xóa giao dịch");
         System.out.println("5.Hiển thị ds trong ngày theo nv");
-        System.out.println("0.Thoat");
+        System.out.println("0.Thoát");
         n = scanner.nextInt();
         scanner.nextLine();  
         switch(n){
