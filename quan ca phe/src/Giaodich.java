@@ -49,22 +49,21 @@ public String getMgd(){
     }
     static Scanner scanner = new Scanner(System.in);
  static ArrayList<Giaodich> dsGiaodich = new ArrayList<>();
-    //create
-    public static void themGiaodich(){
-        System.out.print("Nhap ma giao dich: ");
+ public static void themGiaodich(){
+        System.out.print("Nhập mã giao dịch: ");
         String mgd = scanner.nextLine();
-        System.out.print("Nhap ngay giao dich: ");
+        System.out.print("Nhập ngày giao dich: ");
         String ngd = scanner.nextLine();
-        System.out.print("Nhap nhan vien giao dich: ");
+        System.out.print("Nhập nhân viên giao dịch: ");
         String nvgd = scanner.nextLine();
-        System.out.print("Nhap tong tien: ");
+        System.out.print("Nhập tổng tiền: ");
         Double tt = scanner.nextDouble();
-        System.out.print("Nhap so luong sp: ");
+        System.out.print("Nhập số lượng sp: ");
         int tsp = scanner.nextInt();
         scanner.nextLine();
         Giaodich gd = new Giaodich(mgd,ngd,nvgd,tt,tsp);
         dsGiaodich.add(gd);
-        System.out.println("Them giao dich thanh cong");
+        System.out.println("Thêm giao dịch thành công");
    }
    //read
    public static void docGiaodich(){
@@ -77,20 +76,20 @@ public String getMgd(){
     String macansua = scanner.nextLine();
     for(Giaodich gd : dsGiaodich){
         if(gd.getMgd().equals(macansua)){
-            System.out.print("Nhap ma moi: ");
+            System.out.print("Nhap mã mới: ");
             gd.setMgd(scanner.nextLine());
-            System.out.print("Nhap ngay moi: ");
+            System.out.print("Nhap ngày mới: ");
             gd.setNgd(scanner.nextLine());
-            System.out.print("Nhap nhan vien moi: ");
+            System.out.print("Nhap nhân viên mới: ");
             gd.setNvgd(scanner.nextLine());
-            System.out.print("nhap tong tien moi: ");
+            System.out.print("Nhập tổng tiền mới: ");
             gd.setTt(scanner.nextDouble());
-            System.out.print("Nhap tong sp moi: ");
+            System.out.print("Nhập tổng sp mới: ");
             gd.setTsp(scanner.nextInt());
             scanner.nextLine();
             break; 
         }
-        System.out.println("khong tim thay ma GD");
+        System.out.println("Không tìm thấy mã GD");
     }
    }
    //delete
@@ -101,7 +100,7 @@ public String getMgd(){
                 dsGiaodich.remove(gd);
               break;
     }
-    System.err.println("khong tim thay ma GD");
+    System.err.println("Không tìm thấy mã GD");
 }
 }
 //Read

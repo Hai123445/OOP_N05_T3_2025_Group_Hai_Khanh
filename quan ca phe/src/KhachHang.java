@@ -25,14 +25,15 @@ public void setTenkh(String tenKh){
 public void setSdt(String sdt){
     this.sdt = sdt;
 }
+
 static Scanner scanner = new Scanner(System.in);
  static ArrayList<KhachHang> dsKhachhang = new ArrayList<>();
 public static void themKhachhang(){
-     System.out.print("Nhap ma KH");
+     System.out.print("Nhập mã KH");
      String makh = scanner.nextLine(); 
-     System.out.print("Nhap ten KH");
+     System.out.print("Nhập tên KH");
      String tenKh = scanner.nextLine();
-     System.out.print("Nhap Sdt");
+     System.out.print("Nhập Sdt");
      String sdt = scanner.nextLine();
      KhachHang kh = new KhachHang(makh,tenKh,sdt);
      dsKhachhang.add(kh);
@@ -46,14 +47,14 @@ public static void suaKhachhang(){
    String macansua = scanner.nextLine();
    for(KhachHang kh : dsKhachhang){
       if(kh.getMakh().equals(macansua)){
-         System.out.print("Nhap ma moi");
+         System.out.print("Nhập mã mới");
          kh.setMakh(scanner.nextLine());
-         System.out.print("Nhap ten moi");
+         System.out.print("Nhập tên mới");
          kh.setTenkh(scanner.nextLine());
-         System.out.print("Nhap sdt moi");
+         System.out.print("Nhập sdt mới");
          kh.setSdt(scanner.nextLine());
       }
-      System.out.println("khong tim thay ma");
+      System.out.println("không tìm thấy mã");
    }
   }
 public static void xoaKhachhang(){
@@ -63,7 +64,7 @@ public static void xoaKhachhang(){
             dsKhachhang.remove(kh);
             break;
          }
-         System.out.println("Khong tim thay ma");
+         System.out.println("không tìm thấy mã");
       }
   }   
 public void hienthi(){
