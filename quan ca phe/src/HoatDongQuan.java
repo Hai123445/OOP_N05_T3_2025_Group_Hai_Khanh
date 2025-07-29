@@ -23,8 +23,9 @@ public class HoatDongQuan {
         System.out.println("3.Quản lý Nhân Viên");
         System.out.println("4.Quản lý Giao Dịch");
         System.out.println("5.Thoát");
+        System.out.println("Chọn chức năng: ");
         n = scanner.nextInt();
-     scanner.nextLine();
+        scanner.nextLine();
         switch (n) {
             case 1: testKhachhang.testkh(); break;
             case 2: testSanPham.test(); break;
