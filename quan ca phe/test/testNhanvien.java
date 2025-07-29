@@ -102,7 +102,7 @@ public class testNhanvien {
                     break;    
 
                 case 0:
-                    System.out.println("Thoát chương trình.");
+                    System.out.println("Thoát menu.");
                     break;
 
                 default:
@@ -110,7 +110,5 @@ public class testNhanvien {
             }
 
         } while (chon != 0);
-
-        scanner.close();
     }
 }    

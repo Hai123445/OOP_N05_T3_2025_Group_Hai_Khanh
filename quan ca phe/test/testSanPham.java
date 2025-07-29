@@ -35,14 +35,12 @@ public class testSanPham {
                     HoatDongQuan.timKiemTheoTen(SanPham.getDanhSachSp(), sc);
                     break;
                 case 0:
-                    System.out.println("Thóat chương trình.");
+                    System.out.println("Thoát menu.");
                     break;
                 default:
                     System.out.println("Chọn chức năng không hợp lệ");
             }
             System.out.println();
         } while (choice != 0);
-
-        sc.close();
     }
 }

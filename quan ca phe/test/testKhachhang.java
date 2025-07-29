@@ -10,6 +10,7 @@ static Scanner scanner = new Scanner(System.in);
         System.out.println("3.Chỉnh thông tin khách hàng");
         System.out.println("4.Xóa khách hàng");
         System.out.println("0.Thoát");
+        System.out.print("Chọn chức năng: ");
         n = scanner.nextInt();
         scanner.nextLine();  
         switch(n){
@@ -17,8 +18,8 @@ static Scanner scanner = new Scanner(System.in);
             case 2 : KhachHang.docKhachhang(); break;
             case 3 : KhachHang.suaKhachhang(); break;
             case 4 : KhachHang.xoaKhachhang(); break;
-            case 0 : System.out.println("Thoat menu"); break;
-            default : System.out.println("Lua chon khong hop le"); break;
+            case 0 : System.out.println("Thoát menu"); break;
+            default : System.out.println("Lựa chọn không hợp lệ!"); break;
         }
      }
        while(n != 0);
