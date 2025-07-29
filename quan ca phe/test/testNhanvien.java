@@ -9,7 +9,7 @@ public class testNhanvien {
     public static void menu(){
         int chon;
         do {
-            System.out.println("\n--- MENU ---");
+            System.out.println("====== QUẢN LÝ NHÂN VIÊN ======");
             System.out.println("1. Thêm nhân viên");
             System.out.println("2. Hiển thị danh sách nhân viên");
             System.out.println("3. Sửa tên nhân viên theo mã");

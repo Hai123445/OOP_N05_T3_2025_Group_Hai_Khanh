@@ -4,6 +4,7 @@ static Scanner scanner = new Scanner(System.in);
    public static void testkh(){
         int n;
         do{
+        System.out.println("====== QUẢN LÝ KHÁCH HÀNG ======");
         System.out.println("1.Thêm khách hàng");
         System.out.println("2.Danh sách khách hàng");
         System.out.println("3.Chỉnh thông tin khách hàng");

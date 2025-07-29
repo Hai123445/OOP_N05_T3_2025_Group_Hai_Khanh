@@ -4,6 +4,7 @@ public class testGiaodich {
    public static void testgd(){
         int n;
         do{
+        System.out.println("====== QUẢN LÝ GIAO DỊCH ======");  
         System.out.println("1.Thêm giao dịch");
         System.out.println("2.Hiển thị giao dịch");
         System.out.println("3.Cập nhật giao dịch");
