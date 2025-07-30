@@ -16,9 +16,8 @@ public class testNhanvien {
             System.out.println("2. Hiển thị danh sách nhân viên");
             System.out.println("3. Sửa tên nhân viên theo mã");
             System.out.println("4. Xóa nhân viên theo mã");
-            System.out.println("5. Tính lương nhân viên theo mã");
-            System.out.println("6. Thống kê giao dịch");
-            System.out.println("7. Thêm giao dịch");
+            System.out.println("5. Thống kê giao dịch");
+            System.out.println("6. Thêm giao dịch");
             System.out.println("0. Thoát");
             System.out.print("Chọn chức năng: ");
             chon = scanner.nextInt();
@@ -30,7 +29,9 @@ public class testNhanvien {
                     String ma = scanner.nextLine();
                     System.out.print("Nhập tên NV: ");
                     String ten = scanner.nextLine();
-                    danhSachNV.add(new Nhanvien(ma, ten));
+                    System.out.print("Nhập số điện thoại: ");
+                    String sdt = scanner.nextLine();
+                    danhSachNV.add(new Nhanvien(ma, ten, sdt));
                     break;
 
                 case 2:
@@ -76,30 +77,10 @@ public class testNhanvien {
                         System.out.println("Không tìm thấy nhân viên!");
                     }
                     break;
-
                 case 5:
-                    System.out.println("Nhập mã NV cần tính lương: ");
-                    String maLuong = scanner.nextLine();
-                    boolean found = false;
-                    for (Nhanvien nv : danhSachNV) {
-                        if (nv.MaNv.equals(maLuong)) {
-                            System.out.print("Nhập số giờ làm: ");
-                            double gio = scanner.nextDouble();
-                            scanner.nextLine();
-                            double luong = nv.tinhLuong(gio);
-                            System.out.println("Lương của nhân viên là: " + luong + " VND");
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (!found){
-                        System.out.println("Không tìm thấy nhân viên!");
-                    }
-                    break;
-                case 6:
                     ThongKe.thongKeGiaoDich(dsGiaodich, danhSachNV, dsSanpham);
                     break;
-                case 7:
+                case 6:
                     ThongKe.themGiaoDich(dsGiaodich, danhSachNV);
                     break;    
 
