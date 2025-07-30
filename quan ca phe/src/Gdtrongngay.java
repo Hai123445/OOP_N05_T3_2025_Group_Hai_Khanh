@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.example.servingwebcontent.Giaodich;
 public class Gdtrongngay extends Giaodich{
   public Gdtrongngay(String MaGiaoDich, String NgayThangNamGiaoDich, String NhanVienGiaoDich, double TongTien, int TongSoSp) {
         super(MaGiaoDich, NgayThangNamGiaoDich, NhanVienGiaoDich, TongTien, TongSoSp);
