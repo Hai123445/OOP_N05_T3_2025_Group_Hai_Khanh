@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.example.servingwebcontent.model.Giaodich;
+
 public class testNhanvien {
     static ArrayList<Nhanvien> danhSachNV = new ArrayList<>();
     static ArrayList<Giaodich> dsGiaodich = new ArrayList<>();

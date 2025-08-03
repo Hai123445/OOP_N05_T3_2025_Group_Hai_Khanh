@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.example.servingwebcontent.model.Giaodich;
+import com.example.servingwebcontent.model.KhachHang;
 public class HoatDongQuan {
     public Nhanvien nv;
     public KhachHang kh;
