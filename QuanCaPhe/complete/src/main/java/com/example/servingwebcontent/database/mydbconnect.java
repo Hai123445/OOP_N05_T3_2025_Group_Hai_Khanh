@@ -22,8 +22,7 @@ public class myDBConnection {
     // protected String myDatabaseDriver;
 
     String myDatabaseDriver = "com.mysql.cj.jdbc.Driver";
-    String username = "avnadmin";
-    private String password = "AVNS_fIeg8rQ_jgkVDcDFWyn";
+    
 
     public Connection conn = null;
 
