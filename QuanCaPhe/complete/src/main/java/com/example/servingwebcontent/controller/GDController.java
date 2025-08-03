@@ -20,11 +20,11 @@ public class GDController{
 private GDRepository gdRepository;
 
     
-    @GetMapping("/customers")
+    @GetMapping("/giaodich")
     public String docGiaodich(Model model) {
         List<Giaodich> danhSachGiaodich = gdRepository.findAll();
-        model.addAttribute("customers", danhSachGiaodich);
-        return "customer"; // Tên file HTML Thymeleaf để hiển thị
+        model.addAttribute("giaodich", danhSachGiaodich);
+        return "giaodich"; // Tên file HTML Thymeleaf để hiển thị
     }
     public String taoMaGiaodich() {
     List<Giaodich> danhSach = gdRepository.findAll();
