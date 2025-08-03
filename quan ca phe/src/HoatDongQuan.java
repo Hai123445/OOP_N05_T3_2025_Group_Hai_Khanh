@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import com.example.servingwebcontent.Giaodich;
 public class HoatDongQuan {
     public Nhanvien nv;
     public KhachHang kh;

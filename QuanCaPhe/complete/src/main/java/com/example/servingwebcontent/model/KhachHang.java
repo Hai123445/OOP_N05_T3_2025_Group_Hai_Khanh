@@ -1,17 +1,19 @@
+package com.example.servingwebcontent.model;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class KhachHang{
-    String MaKh;
-    String TenKh;
-    String sdt;
-
+     public String MaKh;
+     public String TenKh;
+     public String sdt;
+     public String Diachi;
 
 
     // phuong thuc dac biet vi cung ten voi Lop --> Constructor
-   public KhachHang(String maKh, String tenKh, String sdt) {
+   public KhachHang(String maKh, String tenKh, String sdt,String Diachi) {
         this.MaKh = maKh;
         this.TenKh = tenKh;
         this.sdt = sdt;
+        this.Diachi = Diachi;
 }
 public String getMakh(){
     return MaKh;
@@ -25,7 +27,9 @@ public void setTenkh(String tenKh){
 public void setSdt(String sdt){
     this.sdt = sdt;
 }
-
+public void setDc(String Diachi){
+    this.Diachi = Diachi;
+}
 static Scanner scanner = new Scanner(System.in);
  static ArrayList<KhachHang> dsKhachhang = new ArrayList<>();
 public static void themKhachhang(){
@@ -35,7 +39,8 @@ public static void themKhachhang(){
      String tenKh = scanner.nextLine();
      System.out.print("Nhập Sdt");
      String sdt = scanner.nextLine();
-     KhachHang kh = new KhachHang(makh,tenKh,sdt);
+     String Diachi = scanner.nextLine();
+     KhachHang kh = new KhachHang(makh,tenKh,sdt,Diachi);
      dsKhachhang.add(kh);
   }
   public static void docKhachhang(){
@@ -53,6 +58,7 @@ public static void suaKhachhang(){
          kh.setTenkh(scanner.nextLine());
          System.out.print("Nhập sdt mới");
          kh.setSdt(scanner.nextLine());
+         kh.setDc(scanner.nextLine());
       }
       System.out.println("không tìm thấy mã");
    }

@@ -1,3 +1,4 @@
+package com.example.servingwebcontent.model;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Giaodich {
