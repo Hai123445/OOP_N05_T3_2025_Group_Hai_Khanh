@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 import com.example.servingwebcontent.model.KhachHang;
 public class testKhachhang {
 static Scanner scanner = new Scanner(System.in);
