@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface KHRepository extends JpaRepository<KhachHang, String> {
 
-    @Query(value = "SELECT ma_kh FROM khach_hang ORDER BY ma_kh DESC LIMIT 1", nativeQuery = true)
+    @Query(value = "SELECT makh FROM khachhang ORDER BY makh DESC LIMIT 1", nativeQuery = true)
     String findMaxMaKh();
 }

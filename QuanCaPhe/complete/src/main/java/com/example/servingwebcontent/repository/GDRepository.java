@@ -12,6 +12,7 @@ public interface GDRepository extends JpaRepository<Giaodich, String> {
     // Bạn có thể thêm các phương thức truy vấn tùy chỉnh ở đây nếu muốn
     @Modifying
     @Transactional
-    @Query("DELETE FROM Order o WHERE o.customer IS NULL OR o.product IS NULL")
+    @Query("DELETE FROM giaodich gd WHERE gd.khachhang IS NULL OR gd.sanpham IS NULL")
     void deleteInvalidOrders();
+     
 }
