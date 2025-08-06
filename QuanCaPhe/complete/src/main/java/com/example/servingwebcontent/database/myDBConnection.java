@@ -16,7 +16,8 @@ public class myDBConnection {
     // @Value("${my.database.url}")
     // protected String myDatabaseURL;
 
-    String myDatabaseURL = "jdbc:mysql://mysql-2954f5bb-opp-data.j.aivencloud.com:14833/defaultdb?sslMode=REQUIRED";
+    String myDatabaseURL = "jdbc:mysql://mysql-2954f5bb-opp-data.j.aivencloud.com:14833/defaultdb?user=avnadmin&password=AVNS_fIeg8rQ_jgkVDcDFWyn&ssl-mode=REQUIRED";
+;
 
     // @Value("${my.database.driver}")
     // protected String myDatabaseDriver;
@@ -56,6 +57,18 @@ public class myDBConnection {
 
         return conn;
 
+    }
+    public boolean testConnection() {
+        try (Connection conn = getOnlyConn()) {
+            if (conn != null && !conn.isClosed()) {
+                System.out.println("Database connection test successful");
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Database connection test failed: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return false;
     }
 
 }

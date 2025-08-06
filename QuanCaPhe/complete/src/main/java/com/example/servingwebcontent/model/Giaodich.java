@@ -2,27 +2,16 @@ package com.example.servingwebcontent.model;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "giaodich")
 public class Giaodich {
 
-    @Id
+    
     public String MaGiaoDich;
     public String NgayThangNamGiaoDich;
     public String NhanVienGiaoDich;
     public double TongTien;
     public int TongSoSp;
-    @ManyToOne
-    @JoinColumn(name = "makh")
-    private KhachHang khachhang;
+   
 
-    @Column(name = "sanpham")
-    private String sanpham;
-public Giaodich() {}
-//phuong thuc hoat dong
 public Giaodich(String mgd,String ngd,String nvgd,double tt,int tsp){
     this.MaGiaoDich = mgd;
     this.NgayThangNamGiaoDich = ngd;

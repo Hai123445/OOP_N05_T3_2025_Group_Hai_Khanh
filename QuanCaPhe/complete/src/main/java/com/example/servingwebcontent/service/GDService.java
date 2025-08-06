@@ -42,7 +42,7 @@ public class GDService {
     public Giaodich findById(String id) {
         return gdRepository.findById(id).orElse(null);
     }
-     public boolean datHang(String masp, String nhanvien, int soLuong,double tongTien) {
+     public boolean datHang(String masp, String nvgd, int tsp, double tt) {
         Optional<SanPham> sanPhamOpt = spRepository.findById(masp);
         if (sanPhamOpt.isEmpty()) {
             System.out.println("Sản phẩm không tồn tại.");
@@ -50,13 +50,13 @@ public class GDService {
         }
 
         SanPham sp = sanPhamOpt.get();
-        double tongTien = sp.getGiaSp() * soLuong;
+        double tongTien = sp.getGiaSp() * tsp;
 
         Giaodich gd = new Giaodich();
         gd.setMgd("GD" + System.currentTimeMillis());
         gd.setNgd(LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
-        gd.setNvgd(nhanvien);
-        gd.setTsp(soLuong);
+        gd.setNvgd(nvgd);
+        gd.setTsp(tsp);
         gd.setTt(tongTien);
         
 
