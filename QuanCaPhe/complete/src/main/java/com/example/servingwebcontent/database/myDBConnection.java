@@ -22,22 +22,22 @@ import org.springframework.beans.factory.annotation.Value;
     private String myDatabasePassword;
 
     public myDBConnection() {
-        // Fallback values if properties are not loaded
-        if (myDatabaseURL == null) {
-            myDatabaseURL = "mysql://avnadmin:AVNS_fIeg8rQ_jgkVDcDFWyn@mysql-2954f5bb-opp-data.j.aivencloud.com:14833/defaultdb?ssl-mode=REQUIRED";
-        }
-        if (myDatabaseDriver == null) {
-            myDatabaseDriver = "com.mysql.cj.jdbc.Driver";
-        }
-        if (myDatabaseUsername == null) {
-            myDatabaseUsername = "avnadmin";
-        }
-        if (myDatabasePassword == null) {
-            myDatabasePassword = "AVNS_fIeg8rQ_jgkVDcDFWyn";
-        }
-    }
+    };
+
+    // @Value("${my.database.url}")
+    // protected String myDatabaseURL;
+
+    String myDatabaseURL = "jdbc:mysql://mysql-2954f5bb-opp-data.j.aivencloud.com:14833/defaultdb?sslMode=REQUIRED";
+
+    // @Value("${my.database.driver}")
+    // protected String myDatabaseDriver;
+
+    String myDatabaseDriver = "com.mysql.cj.jdbc.Driver";
+    
+
     public Connection conn = null;
-    public Statement getMyConn(){
+
+    public Statement getMyConn() {
 
         try {
 
