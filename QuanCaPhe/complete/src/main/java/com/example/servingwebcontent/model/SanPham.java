@@ -1,47 +1,42 @@
+package com.example.demo.model;
 
-package com.example.servingwebcontent.model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+public class SanPham {
+    private int id;
+    private String ten;
+    private double gia;
+    private String mota;
 
-@Entity
-public class SanPham{
-    @Id
-    public String maSp;
-    public String tenSp;
-    public int giaSp;
-    public String mota;
-// Constructor
-    public SanPham(String maSp, String tenSp, int giaSp,String mota) {
-        this.maSp = maSp;
-        this.tenSp = tenSp;
-        this.giaSp = giaSp;
+    public SanPham() {}
+
+    public SanPham(int id, String ten, double gia, String mota) {
+        this.id = id;
+        this.ten = ten;
+        this.gia = gia;
         this.mota = mota;
     }
 
-    // Getters and Setters
-    public String getMaSp() {
-        return maSp;
+    public int getId() {
+        return id;
     }
-
-    public String getTenSp() {
-        return tenSp;
+    public void setId(int id) {
+        this.id = id;
     }
-
-    public int getGiaSp() {
-        return giaSp;
+    public String getTen() {
+        return ten;
     }
-    public String getmota(){
+    public void setTen(String ten) {
+        this.ten = ten;
+    }
+    public double getGia() {
+        return gia;
+    }
+    public void setGia(double gia) {
+        this.gia = gia;
+    }
+    public String getMota() {
         return mota;
     }
-
-    public void setTenSp(String tenSp) {
-        this.tenSp = tenSp;
-    }
-
-    public void setGiaSp(int giaSp) {
-        this.giaSp = giaSp;
-    }
-    public void setmota(String mota){
+    public void setMota(String mota) {
         this.mota = mota;
     }
-}
+} 
