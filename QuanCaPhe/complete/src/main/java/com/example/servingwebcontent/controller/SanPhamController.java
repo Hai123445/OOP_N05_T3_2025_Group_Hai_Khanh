@@ -59,7 +59,7 @@ public class SanPhamController {
         if (existing != null) {
             existing.setTenSp(tenSp);
             existing.setGiaSp(giaSp);
-            existing.setMoTa(moTa);
+            existing.setmota(moTa);
             sanPhamRepository.save(existing);
         }
 

@@ -1,14 +1,21 @@
-// SanPham.java (Model)
-public class SanPham {
-    String maSp;
-    String tenSp;
-    int giaSp;
 
-    // Constructor
-    public SanPham(String maSp, String tenSp, int giaSp) {
+package com.example.servingwebcontent.model;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class SanPham{
+    @Id
+    public String maSp;
+    public String tenSp;
+    public int giaSp;
+    public String mota;
+// Constructor
+    public SanPham(String maSp, String tenSp, int giaSp,String mota) {
         this.maSp = maSp;
         this.tenSp = tenSp;
         this.giaSp = giaSp;
+        this.mota = mota;
     }
 
     // Getters and Setters
@@ -23,6 +30,9 @@ public class SanPham {
     public int getGiaSp() {
         return giaSp;
     }
+    public String getmota(){
+        return mota;
+    }
 
     public void setTenSp(String tenSp) {
         this.tenSp = tenSp;
@@ -30,5 +40,8 @@ public class SanPham {
 
     public void setGiaSp(int giaSp) {
         this.giaSp = giaSp;
+    }
+    public void setmota(String mota){
+        this.mota = mota;
     }
 }

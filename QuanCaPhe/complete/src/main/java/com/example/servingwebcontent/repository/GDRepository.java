@@ -10,9 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface GDRepository extends JpaRepository<Giaodich, String> {
     // Bạn có thể thêm các phương thức truy vấn tùy chỉnh ở đây nếu muốn
-    @Modifying
-    @Transactional
-    @Query("DELETE FROM giaodich gd WHERE gd.khachhang IS NULL OR gd.sanpham IS NULL")
-    void deleteInvalidOrders();
+    
      
 }
