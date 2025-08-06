@@ -1,73 +1,52 @@
 package com.example.servingwebcontent.database;
+
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.lang.Class;
 import java.sql.Statement;
-import org.springframework.beans.factory.annotation.Value;
+
 @Component
-    public class myDBConnection {
+public class myDBConnection {
 
-    @Value("${my.database.url}")
-    private String myDatabaseURL;
+    private final String myDatabaseURL = "jdbc:mysql://mysql-2954f5bb-opp-data.j.aivencloud.com:14833/defaultdb?sslMode=REQUIRED";
+    private final String username = "avnadmin";  
+    private final String password = "AVNS_fIeg8rQ_jgkVDcDFWyn"; 
+    private final String myDatabaseDriver = "com.mysql.cj.jdbc.Driver";
 
-    @Value("${my.database.driver}")
-    private String myDatabaseDriver;
+    private Connection conn = null;
 
-    @Value("${my.database.username}")
-    private String myDatabaseUsername;
-
-    @Value("${my.database.password}")
-    private String myDatabasePassword;
-
-    public myDBConnection() {
-    };
-
-    // @Value("${my.database.url}")
-    // protected String myDatabaseURL;
-
-    String myDatabaseURL = "jdbc:mysql://mysql-2954f5bb-opp-data.j.aivencloud.com:14833/defaultdb?sslMode=REQUIRED";
-
-    // @Value("${my.database.driver}")
-    // protected String myDatabaseDriver;
-
-    String myDatabaseDriver = "com.mysql.cj.jdbc.Driver";
-    
-
-    public Connection conn = null;
+    public Connection getConnection() {
+        try {
+            Class.forName(myDatabaseDriver);
+            return DriverManager.getConnection(myDatabaseURL, username, password);
+        } catch (Exception e) {
+            throw new RuntimeException("Database connection failed", e);
+        }
+    }
 
     public Statement getMyConn() {
-
         try {
-
             Class.forName(myDatabaseDriver);
-            conn = DriverManager.getConnection(myDatabaseURL);
-            Statement sta = conn.createStatement();
-            return sta;
-
+            conn = DriverManager.getConnection(myDatabaseURL, username, password);
+            return conn.createStatement();
         } catch (Exception e) {
-            System.out.println("myDBConnection at 34" + e);
+            System.out.println("myDBConnection at getMyConn() error: " + e);
         }
-
         return null;
-
     }
 
     public Connection getOnlyConn() {
         try {
             Class.forName(myDatabaseDriver);
-
-            conn = DriverManager.getConnection(myDatabaseURL);
+            conn = DriverManager.getConnection(myDatabaseURL, username, password);
             return conn;
-
         } catch (Exception e) {
             System.out.println("Database connection error: " + e);
         }
-
-        return conn;
-
+        return null;
     }
+
     public boolean testConnection() {
         try (Connection conn = getOnlyConn()) {
             if (conn != null && !conn.isClosed()) {
@@ -80,5 +59,4 @@ import org.springframework.beans.factory.annotation.Value;
         }
         return false;
     }
-
 }

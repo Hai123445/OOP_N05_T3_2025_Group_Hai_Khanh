@@ -1,10 +1,8 @@
 package com.example.servingwebcontent.controller;
 
+import com.example.servingwebcontent.database.KhachHangAiven;
 import com.example.servingwebcontent.model.KhachHang;
 
-import com.example.servingwebcontent.repository.KHRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,61 +12,74 @@ import java.util.List;
 @Controller
 public class KHController {
 
-   @Autowired
-private KHRepository khRepository;
+    private final KhachHangAiven khachHangDB = new KhachHangAiven();
 
     // Hiển thị danh sách khách hàng
     @GetMapping("/khachhang")
-    public String docKhachhang(Model model) {
-        List<KhachHang> danhSachKhachHang = khRepository.findAll();
-        model.addAttribute("khachhang", danhSachKhachHang);
-        return "khachhang"; // Tên file HTML Thymeleaf để hiển thị
+    public String hienThiDanhSach(Model model) {
+        try {
+            List<KhachHang> ds = khachHangDB.getAllKhachHang();
+            model.addAttribute("khachhang", ds);
+        } catch (Exception e) {
+            model.addAttribute("error", "Lỗi khi tải dữ liệu: " + e.getMessage());
+        }
+        return "khachhang"; // file .html
     }
-    public String taoMaKhachHang() {
-    List<KhachHang> danhSach = khRepository.findAll();
-    int max = danhSach.size() + 1;
-    return String.format("KH%03d", max); 
-    }
-    
-    // Thêm khách hàng mới
+
+    // Thêm khách hàng
     @PostMapping("/khachhang/add")
     public String themKhachHang(
             @RequestParam String tenKh,
-            @RequestParam String maKh,
             @RequestParam String sdt,
-            @RequestParam String diaChi, Model model) {
+            @RequestParam String diaChi,
+            Model model) {
 
-        String newmaKh = taoMaKhachHang();
+        try {
+            String newMaKh = taoMaKhachHang();
+            KhachHang kh = new KhachHang(newMaKh, tenKh, sdt, diaChi);
+            khachHangDB.createKhachHang(kh);
+        } catch (Exception e) {
+            model.addAttribute("error", "Lỗi khi thêm khách hàng: " + e.getMessage());
+        }
 
-        KhachHang kh = new KhachHang(newmaKh,tenKh,sdt,diaChi);
-        khRepository.save(kh);
-
-        return docKhachhang(model);
+        return "redirect:/khachhang";
     }
 
-    // Sửa thông tin khách hàng
+    // Sửa khách hàng
     @PostMapping("/khachhang/edit")
     public String suaKhachHang(
             @RequestParam String maKh,
             @RequestParam String tenKh,
+            @RequestParam String sdt,
             @RequestParam String diaChi,
-            @RequestParam String sdt, Model model) {
+            Model model) {
 
-        KhachHang existing = khRepository.findById(maKh).orElse(null);
-        if (existing != null) {
-            existing.setTenkh(tenKh);
-            existing.setDc(diaChi);
-            existing.setSdt(sdt);
-            khRepository.save(existing);
+        try {
+            KhachHang newKh = new KhachHang(maKh, tenKh, sdt, diaChi);
+            khachHangDB.updateKhachHang(maKh, newKh);
+        } catch (Exception e) {
+            model.addAttribute("error", "Lỗi khi sửa khách hàng: " + e.getMessage());
         }
 
-        return docKhachhang(model);
+        return "redirect:/khachhang";
     }
 
     // Xóa khách hàng
     @PostMapping("/khachhang/delete")
     public String xoaKhachHang(@RequestParam String maKh, Model model) {
-        khRepository.deleteById(maKh);
-        return docKhachhang(model);
+        try {
+            khachHangDB.deleteKhachHang(maKh);
+        } catch (Exception e) {
+            model.addAttribute("error", "Lỗi khi xóa khách hàng: " + e.getMessage());
+        }
+
+        return "redirect:/khachhang";
+    }
+
+    // Tạo mã khách hàng mới tự động: KH001, KH002,...
+    private String taoMaKhachHang() throws Exception {
+        List<KhachHang> danhSach = khachHangDB.getAllKhachHang();
+        int max = danhSach.size() + 1;
+        return String.format("KH%03d", max);
     }
 }

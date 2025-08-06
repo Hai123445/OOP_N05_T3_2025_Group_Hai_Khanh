@@ -5,21 +5,15 @@ import java.util.Scanner;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "khachhang")
+
 public class KhachHang {
 
-    @Id
+    
     public String MaKh;
     public String TenKh;
     public String sdt;
     public String Diachi;
-    @ManyToOne
-    @JoinColumn(name = "magd")
-    private Giaodich giaodich;
-
-    @Column(name = "sanpham")
-    private String sanpham;
+   
 
     // phuong thuc dac biet vi cung ten voi Lop --> Constructor
    public KhachHang(String maKh, String tenKh, String sdt,String Diachi) {
@@ -30,6 +24,15 @@ public class KhachHang {
 }
 public String getMakh(){
     return MaKh;
+}
+public String getTenkh(){
+    return TenKh;
+}
+public String getsdt(){
+    return sdt;
+}
+public String getDc(){
+    return Diachi;
 }
 public void setMakh(String maKh){
     this.MaKh = maKh;

@@ -1,79 +1,164 @@
 package com.example.servingwebcontent.controller;
 
+import com.example.servingwebcontent.database.GiaodichAiven;
+import com.example.servingwebcontent.database.myDBConnection;
 import com.example.servingwebcontent.model.Giaodich;
-
-
-import com.example.servingwebcontent.repository.GDRepository;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
-
-
+import java.sql.Connection;
+import java.util.Map;
 @Controller
-public class GDController{
-   @Autowired
-private GDRepository gdRepository;
+public class GDController {
+@Autowired myDBConnection dbConnection;
+    private final GiaodichAiven giaoDichDB = new GiaodichAiven();
 
-    
+    // Hiển thị tất cả giao dịch
     @GetMapping("/giaodich")
-    public String docGiaodich(Model model) {
-        List<Giaodich> danhSachGiaodich = gdRepository.findAll();
-        model.addAttribute("giaodich", danhSachGiaodich);
-        return "giaodich"; // Tên file HTML Thymeleaf để hiển thị
-    }
-    public String taoMaGiaodich() {
-    List<Giaodich> danhSach = gdRepository.findAll();
-    int max = danhSach.size() + 1;
-    return String.format("GD%03d", max); 
+    public String hienThiDanhSach(Model model) {
+        try {
+            List<Giaodich> ds = giaoDichDB.getAllGiaodich();
+            model.addAttribute("giaodich", ds);
+        } catch (Exception e) {
+            model.addAttribute("error", "Lỗi khi tải dữ liệu: " + e.getMessage());
+        }
+        return "giaodich";
     }
 
+    // Thêm giao dịch
     @PostMapping("/giaodich/add")
     public String themGiaodich(
-            @RequestParam String maGd,
             @RequestParam String timeGd,
             @RequestParam String nvGd,
             @RequestParam double tongTien,
-            @RequestParam int tongSp, Model model) {
+            @RequestParam int tongSp,
+            Model model) {
 
-        String newmaGd = taoMaGiaodich();
+        try {
+            String newMaGd = taoMaGiaodich();
+            Giaodich gd = new Giaodich(newMaGd, timeGd, nvGd, tongTien, tongSp);
+            giaoDichDB.createGiaodich(gd);
+        } catch (Exception e) {
+            model.addAttribute("error", "Lỗi khi thêm giao dịch: " + e.getMessage());
+        }
 
-        Giaodich gd = new Giaodich(newmaGd,timeGd,nvGd,tongTien,tongSp);
-        gdRepository.save(gd);
-
-        return docGiaodich(model);
+        return "redirect:/giaodich";
     }
 
-    
+    // Sửa giao dịch
     @PostMapping("/giaodich/edit")
     public String suaGiaodich(
             @RequestParam String maGd,
             @RequestParam String timeGd,
             @RequestParam String nvGd,
             @RequestParam double tongTien,
-            @RequestParam int tongSp, Model model) {
+            @RequestParam int tongSp,
+            Model model) {
 
-        Giaodich existing = gdRepository.findById(maGd).orElse(null);
-        if (existing != null) {
-
-            existing.setNgd(timeGd);
-            existing.setNvgd(nvGd);
-            existing.setTt(tongTien);
-            existing.setTsp(tongSp);
-            gdRepository.save(existing);
+        try {
+            Giaodich newGd = new Giaodich(maGd, timeGd, nvGd, tongTien, tongSp);
+            giaoDichDB.updateGiaodich(maGd, newGd);
+        } catch (Exception e) {
+            model.addAttribute("error", "Lỗi khi sửa giao dịch: " + e.getMessage());
         }
 
-        return docGiaodich(model);
+        return "redirect:/giaodich";
     }
 
-    
+    // Xóa giao dịch
     @PostMapping("/giaodich/delete")
     public String xoaGiaodich(@RequestParam String maGd, Model model) {
-        gdRepository.deleteById(maGd);
-        return docGiaodich(model);
+        try {
+            giaoDichDB.deleteGiaodich(maGd);
+        } catch (Exception e) {
+            model.addAttribute("error", "Lỗi khi xóa giao dịch: " + e.getMessage());
+        }
+
+        return "redirect:/giaodich";
     }
+
+    // Hàm sinh mã giao dịch mới: GD001, GD002,...
+    private String taoMaGiaodich() throws Exception {
+        List<Giaodich> danhSach = giaoDichDB.getAllGiaodich();
+        int max = danhSach.size() + 1;
+        return String.format("GD%03d", max);
+    }
+    @PostMapping("/dathang")
+@ResponseBody
+public String datHang(@RequestParam String maKH, @RequestBody Map<String, Integer> gioHang) {
+    Connection conn = null;
+    PreparedStatement stmt = null;
+    PreparedStatement stmtGia = null;
+    ResultSet rs = null;
+
+    try {
+        conn = dbConnection.getConnection();
+        conn.setAutoCommit(false);
+
+        String maGD = "GD" + System.currentTimeMillis(); // Tạo mã giao dịch duy nhất
+
+        String sqlGetGia = "SELECT Gia FROM sanpham WHERE MaSp = ?";
+        stmtGia = conn.prepareStatement(sqlGetGia);
+
+        String sqlInsert = "INSERT INTO donhang(MaGd, MaKh, MaSp, TongSoSp, TongTien) VALUES (?, ?, ?, ?, ?)";
+        stmt = conn.prepareStatement(sqlInsert);
+
+        for (Map.Entry<String, Integer> entry : gioHang.entrySet()) {
+            String maSP = entry.getKey();
+            int soLuong = entry.getValue();
+
+            // Lấy giá sản phẩm
+            stmtGia.setString(1, maSP);
+            rs = stmtGia.executeQuery();
+
+            if (rs.next()) {
+                double gia = rs.getDouble("Gia");
+                double tongTien = gia * soLuong;
+
+                stmt.setString(1, maGD);
+                stmt.setString(2, maKH);
+                stmt.setString(3, maSP);
+                stmt.setInt(4, soLuong); // Tổng số sản phẩm
+                stmt.setDouble(5, tongTien); // Tổng tiền = giá × số lượng
+                stmt.addBatch();
+            } else {
+                return "Sản phẩm không tồn tại: " + maSP;
+            }
+        }
+
+        stmt.executeBatch();
+        conn.commit();
+
+        return "Đặt hàng thành công. Mã giao dịch: " + maGD;
+
+    } catch (Exception e) {
+        try {
+            if (conn != null) conn.rollback();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        e.printStackTrace();
+        return "Lỗi đặt hàng: " + e.getMessage();
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (stmtGia != null) stmtGia.close();
+            if (conn != null) conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+@GetMapping("/dathang")
+public String hienThiTrangDatHang() {
+    return "dathang"; // tên file dathang.html trong /templates
+}
+
 }

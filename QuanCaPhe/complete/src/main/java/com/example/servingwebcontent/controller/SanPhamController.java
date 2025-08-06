@@ -1,3 +1,4 @@
+/* 
 package com.example.demo.controller;
 
 import com.example.demo.dao.SanPhamDAO;
@@ -39,3 +40,4 @@ public class SanPhamController {
         dao.delete(id);
     }
 }
+    */

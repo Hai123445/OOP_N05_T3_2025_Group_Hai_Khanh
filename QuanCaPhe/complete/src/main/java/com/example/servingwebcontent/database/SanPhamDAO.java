@@ -1,3 +1,4 @@
+/* 
 package com.example.demo.dao;
 
 import com.example.demo.model.SanPham;
@@ -89,3 +90,4 @@ public class SanPhamDAO {
         ps.executeUpdate();
     }
 }
+    */
