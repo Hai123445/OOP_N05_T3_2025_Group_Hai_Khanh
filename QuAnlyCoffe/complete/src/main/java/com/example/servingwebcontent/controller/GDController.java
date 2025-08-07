@@ -14,11 +14,12 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.sql.Connection;
 import java.util.Map;
+import java.util.UUID;
 @Controller
 public class GDController {
 @Autowired myDBConnection dbConnection;
     private final GiaodichAiven giaoDichDB = new GiaodichAiven();
-
+  
     // Hiển thị tất cả giao dịch
     @GetMapping("/giaodich")
     public String hienThiDanhSach(Model model) {
@@ -34,6 +35,7 @@ public class GDController {
     // Thêm giao dịch
     @PostMapping("/giaodich/add")
     public String themGiaodich(
+            @RequestParam String maKh,
             @RequestParam String timeGd,
             @RequestParam String nvGd,
             @RequestParam double tongTien,
@@ -42,7 +44,7 @@ public class GDController {
 
         try {
             String newMaGd = taoMaGiaodich();
-            Giaodich gd = new Giaodich(newMaGd, timeGd, nvGd, tongTien, tongSp);
+            Giaodich gd = new Giaodich(newMaGd,maKh, timeGd, nvGd, tongTien, tongSp);
             giaoDichDB.createGiaodich(gd);
         } catch (Exception e) {
             model.addAttribute("error", "Lỗi khi thêm giao dịch: " + e.getMessage());
@@ -55,6 +57,7 @@ public class GDController {
     @PostMapping("/giaodich/edit")
     public String suaGiaodich(
             @RequestParam String maGd,
+            @RequestParam String maKh,
             @RequestParam String timeGd,
             @RequestParam String nvGd,
             @RequestParam double tongTien,
@@ -62,7 +65,7 @@ public class GDController {
             Model model) {
 
         try {
-            Giaodich newGd = new Giaodich(maGd, timeGd, nvGd, tongTien, tongSp);
+            Giaodich newGd = new Giaodich(maGd,maKh,timeGd, nvGd, tongTien, tongSp);
             giaoDichDB.updateGiaodich(maGd, newGd);
         } catch (Exception e) {
             model.addAttribute("error", "Lỗi khi sửa giao dịch: " + e.getMessage());
@@ -89,6 +92,7 @@ public class GDController {
         int max = danhSach.size() + 1;
         return String.format("GD%03d", max);
     }
+    
     @PostMapping("/dathang")
 @ResponseBody
 public String datHang(@RequestParam String maKH, @RequestBody Map<String, Integer> gioHang) {
@@ -101,7 +105,7 @@ public String datHang(@RequestParam String maKH, @RequestBody Map<String, Intege
         conn = dbConnection.getConnection();
         conn.setAutoCommit(false);
 
-        String maGD = "GD" + System.currentTimeMillis(); // Tạo mã giao dịch duy nhất
+         String maGD = "GD" + UUID.randomUUID().toString().substring(0, 6);
 
         String sqlGetGia = "SELECT Gia FROM sanpham WHERE MaSp = ?";
         stmtGia = conn.prepareStatement(sqlGetGia);

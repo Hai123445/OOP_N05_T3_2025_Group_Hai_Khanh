@@ -10,7 +10,7 @@ public class GiaodichAiven {
 
     private final String jdbcUrl = "jdbc:mysql://mysql-2954f5bb-opp-data.j.aivencloud.com:14833/defaultdb?sslMode=REQUIRED";
     private final String jdbcUsername = "avnadmin";
-    private final String jdbcPassword = "AVNS_YMbLOwNmtJzYlzOvW3s";
+    private final String jdbcPassword = "AVNS_fIeg8rQ_jgkVDcDFWyn";
 
     private Connection getConnection() throws SQLException {
         return DriverManager.getConnection(jdbcUrl, jdbcUsername, jdbcPassword);
@@ -26,13 +26,14 @@ public class GiaodichAiven {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                String ma = rs.getString("MaGiaoDich");
+                String magd = rs.getString("MaGiaoDich");
+                String makh = rs.getString("MaKh");
                 String ngay = rs.getString("NgayThangNamGiaoDich");
                 String nv = rs.getString("NhanVienGiaoDich");
                 double tongTien = rs.getDouble("TongTien");
                 int tongSoSp = rs.getInt("TongSoSp");
 
-                Giaodich gd = new Giaodich(ma, ngay, nv, tongTien, tongSoSp);
+                Giaodich gd = new Giaodich(magd,makh, ngay, nv, tongTien, tongSoSp);
                 list.add(gd);
             }
         }
@@ -54,6 +55,7 @@ public class GiaodichAiven {
             if (rs.next()) {
                 gd = new Giaodich(
                         rs.getString("MaGiaoDich"),
+                        rs.getString("MaKh"),
                         rs.getString("NgayThangNamGiaoDich"),
                         rs.getString("NhanVienGiaoDich"),
                         rs.getDouble("TongTien"),
@@ -69,7 +71,7 @@ public class GiaodichAiven {
 
     // Tạo giao dịch
     public boolean createGiaodich(Giaodich gd) throws SQLException {
-        String sql = "INSERT INTO giaodich (MaGiaoDich, NgayThangNamGiaoDich, NhanVienGiaoDich, TongTien, TongSoSp) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO giaodich (MaGd,MaKh,ThoigianGd, NhanvienGd, TongTien, TongSoSp) VALUES (?,?,?, ?, ?, ?)";
 
         try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -86,12 +88,13 @@ public class GiaodichAiven {
 
     // Cập nhật giao dịch
     public boolean updateGiaodich(String maGiaoDich, Giaodich gd) throws SQLException {
-        String sql = "UPDATE giaodich SET NgayThangNamGiaoDich = ?, NhanVienGiaoDich = ?, TongTien = ?, TongSoSp = ? WHERE MaGiaoDich = ?";
+        String sql = "UPDATE giaodich SET MaKh = ?, ThoigianGd = ?, NhanvienGd = ?, TongTien = ?, TongSoSp = ? WHERE MaGd = ?";
 
         try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, gd.getNgd());
+            pstmt.setString(2,gd.getMkh());
             pstmt.setString(2, gd.getNvgd());
             pstmt.setDouble(3, gd.getTt());
             pstmt.setInt(4, gd.getTsp());
