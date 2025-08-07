@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Giaodich {
 
-    
+    public String MaKh;
     public String MaGiaoDich;
     public String NgayThangNamGiaoDich;
     public String NhanVienGiaoDich;
@@ -12,12 +12,16 @@ public class Giaodich {
     public int TongSoSp;
    
 
-public Giaodich(String mgd,String ngd,String nvgd,double tt,int tsp){
+public Giaodich(String MaKh,String mgd,String ngd,String nvgd,double tt,int tsp){
+    this.MaKh = MaKh;
     this.MaGiaoDich = mgd;
     this.NgayThangNamGiaoDich = ngd;
     this.NhanVienGiaoDich = nvgd;
     this.TongTien = tt;
     this.TongSoSp = tsp; 
+}
+public String getMkh(){
+    return MaKh;
 }
 public String getMgd(){
     return MaGiaoDich;
@@ -33,6 +37,9 @@ public String getMgd(){
     }
     public int getTsp(){
         return TongSoSp;
+    }
+    public void setMkh(String MaKh){
+        this.MaKh = MaKh;
     }
     public void setMgd(String mgd){
          this.MaGiaoDich = mgd;

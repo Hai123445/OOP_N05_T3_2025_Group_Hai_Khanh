@@ -10,7 +10,7 @@ public class KhachHangAiven {
 
     private final String jdbcUrl = "jdbc:mysql://mysql-2954f5bb-opp-data.j.aivencloud.com:14833/defaultdb?sslMode=REQUIRED";
     private final String jdbcUsername = "avnadmin";
-    private final String jdbcPassword = "AVNS_YMbLOwNmtJzYlzOvW3s";
+    private final String jdbcPassword = "AVNS_fIeg8rQ_jgkVDcDFWyn";
 
     private Connection getConnection() throws SQLException {
         return DriverManager.getConnection(jdbcUrl, jdbcUsername, jdbcPassword);
