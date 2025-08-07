@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đặt hàng - Cà Phê Hải Khanh Thịnh</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4ede6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fffaf4;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4b2e2e;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #4b2e2e;
+        }
+
+        input[type="text"], input[type="number"] {
+            padding: 8px;
+            width: 100%;
+            margin: 8px 0 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e9d8c9;
+            color: #4b2e2e;
+        }
+
+        td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        button {
+            background-color: #8b5e3c;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        button:hover {
+            background-color: #a9744f;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+
+    <script>
+        function datHang() {
+            const maKH = document.getElementById("maKH").value.trim();
+            if (!maKH) {
+                alert("Vui lòng nhập mã khách hàng!");
+                return;
+            }
+
+            const gioHang = {};
+            const inputs = document.querySelectorAll(".soLuong");
+
+            inputs.forEach(input => {
+                const maSP = input.dataset.masp;
+                const soLuong = parseInt(input.value);
+                if (soLuong > 0) {
+                    gioHang[maSP] = soLuong;
+                }
+            });
+
+            if (Object.keys(gioHang).length === 0) {
+                alert("Bạn chưa chọn sản phẩm nào!");
+                return;
+            }
+
+            fetch("/dathang?maKH=" + encodeURIComponent(maKH), {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(gioHang)
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                window.location.reload(); // Làm mới sau khi đặt hàng
+            })
+            .catch(error => {
+                alert("Lỗi khi đặt hàng: " + error);
+            });
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h2>🛒 Đặt Hàng</h2>
+
+    <label for="maKH">Mã khách hàng:</label>
+    <input type="text" id="maKH" placeholder="Nhập mã khách hàng..." required>
+
+    <h3>Chọn sản phẩm:</h3>
+    <table>
+        <tr>
+            <th>Mã SP</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+        </tr>
+        <tr>
+            <td>SP001</td>
+            <td>Cà phê đen đá</td>
+            <td>20.000đ</td>
+            <td><input type="number" min="0" value="0" class="soLuong" data-masp="SP001"></td>
+        </tr>
+        <tr>
+            <td>SP002</td>
+            <td>Cà phê sữa đá</td>
+            <td>25.000đ</td>
+            <td><input type="number" min="0" value="0" class="soLuong" data-masp="SP002"></td>
+        </tr>
+        <tr>
+            <td>SP003</td>
+            <td>Bạc xỉu</td>
+            <td>30.000đ</td>
+            <td><input type="number" min="0" value="0" class="soLuong" data-masp="SP003"></td>
+        </tr>
+        <!-- Thêm sản phẩm khác nếu muốn -->
+    </table>
+
+    <button onclick="datHang()">📦 Gửi đặt hàng</button>
+</div>
+
+<div class="footer">
+    © 2025 Cà Phê Hải Khanh Thịnh
+</div>
+
+</body>
+</html>
