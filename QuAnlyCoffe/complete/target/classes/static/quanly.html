@@ -1,368 +1,329 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Quản lý quán Cà Phê Hải Khanh Thịnh - Quản lý menu, đơn hàng và khuyến mãi" />
-    <meta name="keywords" content="quản lý, cà phê, Hải Khanh Thịnh, menu, đơn hàng" />
-    <title>Quản lý - Cà Phê Hải Khanh Thịnh</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-    <style>
-      body {
-        background: #f2ede7; /* kem nhạt */
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      }
-      .navbar-custom {
-        background-color: #5a3e2b; /* nâu cà phê */
-      }
-      .navbar-custom .nav-link,
-      .navbar-custom .navbar-brand {
-        color: #f5e9de;
-      }
-      .card {
-        border-radius: 1rem;
-        background: #fffaf5;
-        border: 1px solid #e2d8cf;
-      }
-      .section-title {
-        margin-top: 30px;
-      }
-      .btn-action {
-        background: #8c6d49;
-        color: #fff;
-        border: none;
-      }
-      .btn-action:hover {
-        background: #6f5438;
-        color: #fff;
-      }
-      .small-toolbar .btn {
-        padding: .35rem .5rem;
-        font-size: .75rem;
-      }
-      .promo-box {
-        background: #fff5ee;
-        border-left: 4px solid #d17f3d;
-        padding: 12px;
-        border-radius: 6px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Cà Phê Hải Khanh Thịnh</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-          <span class="navbar-toggler-icon"><i class="bi bi-list" style="font-size:1.25rem; color:#f5e9de;"></i></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navMain">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#menu">Menu</a></li>
-            <li class="nav-item"><a class="nav-link" href="dathang">Đặt hàng</a></li>
-            <li class="nav-item"><a class="nav-link active" href="quanly.html">Quản lý</a></li>
-          </ul>
-          <form class="d-flex" role="search" action="/search" method="GET">
-            <input class="form-control me-2" type="search" name="q" placeholder="Tìm món..." aria-label="Search" />
-            <button class="btn btn-light btn-sm" type="submit"><i class="bi bi-search"></i></button>
-          </form>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Main Content -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Quản lý quán Cà Phê Hải Khanh Thịnh - Quản lý menu, đơn hàng và khuyến mãi" />
+  <title>Quản lý - Cà Phê Hải Khanh Thịnh</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body { background: #f2ede7; font-family: system-ui, sans-serif; }
+    .navbar-custom { background-color: #5a3e2b; }
+    .navbar-custom .nav-link, .navbar-custom .navbar-brand { color: #f5e9de; }
+    .navbar-custom .nav-link.active { font-weight: bold; text-decoration: underline; }
+    .card { border-radius: 1rem; background: #fffaf5; border: 1px solid #e2d8cf; }
+    .btn-action { background: #8c6d49; color: #fff; border: none; }
+    .btn-action:hover { background: #6f5438; color: #fff; }
+    .table-hover tbody tr:hover { background-color: #f9f3ec; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container">
-      <!-- Quản lý món -->
-      <div class="section-title">
-        <h4>Quản lý Menu</h4>
-        <p class="text-muted">Thêm, sửa, xóa các món trong thực đơn</p>
+      <a class="navbar-brand" href="index.html">Cà Phê Hải Khanh Thịnh</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"><i class="bi bi-list" style="font-size:1.25rem; color:#f5e9de;"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="dathang">Đặt hàng</a></li>
+          <li class="nav-item"><a class="nav-link active" href="quanly.html">Quản lý</a></li>
+        </ul>
+        <form class="d-flex" role="search" action="/search" method="GET">
+          <input class="form-control me-2" type="search" name="q" placeholder="Tìm món..." />
+          <button class="btn btn-light btn-sm" type="submit"><i class="bi bi-search"></i></button>
+        </form>
       </div>
-      <div class="card shadow-sm mb-4">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <strong>Danh sách món</strong>
-          <button class="btn btn-sm btn-action" data-bs-toggle="modal" data-bs-target="#addItemModal">
-            <i class="bi bi-plus-circle"></i> Thêm món
-          </button>
-        </div>
-        <div class="card-body">
-          <table class="table table-hover" id="menuTable">
-            <thead>
-              <tr>
-                <th>Tên món</th>
-                <th>Giá</th>
-                <th>Trạng thái</th>
-                <th>Hành động</th>
-              </tr>
-            </thead>
-            <tbody id="menuTableBody"></tbody>
-          </table>
-        </div>
-      </div>
+    </div>
+  </nav>
 
-      <!-- Quản lý đơn hàng -->
-      <div class="section-title">
-        <h4>Quản lý Đơn hàng</h4>
-        <p class="text-muted">Xem và xử lý các đơn hàng</p>
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <div class="card shadow-sm mb-4">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <strong>Quản lý Menu</strong>
+        <button class="btn btn-sm btn-action" data-bs-toggle="modal" data-bs-target="#addItemModal">
+          <i class="bi bi-plus-circle"></i> Thêm món
+        </button>
       </div>
-      <div class="card shadow-sm mb-4">
-        <div class="card-header">
-          <strong>Danh sách đơn hàng</strong>
-        </div>
-        <div class="card-body">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Mã đơn</th>
-                <th>Khách hàng</th>
-                <th>Món</th>
-                <th>Tổng tiền</th>
-                <th>Trạng thái</th>
-                <th>Hành động</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>#001</td>
-                <td>Lan</td>
-                <td>Cà phê sữa đá x2</td>
-                <td>70.000₫</td>
-                <td><span class="badge bg-warning">Đang xử lý</span></td>
-                <td>
-                  <button class="btn btn-sm btn-action" onclick="updateOrderStatus('#001', 'Hoàn thành')">Hoàn thành</button>
-                </td>
-              </tr>
-              <tr>
-                <td>#002</td>
-                <td>Minh</td>
-                <td>Espresso x1</td>
-                <td>25.000₫</td>
-                <td><span class="badge bg-success">Hoàn thành</span></td>
-                <td>
-                  <button class="btn btn-sm btn-outline-secondary" disabled>Xem</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="card-body">
+        <table class="table table-hover align-middle">
+          <thead>
+            <tr>
+              <th>Tên món</th>
+              <th>Giá</th>
+              <th>Tồn kho</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="menuTableBody"></tbody>
+        </table>
       </div>
+    </div>
+  </div>
 
-      <!-- Quản lý khuyến mãi -->
-      <div class="section-title">
-        <h4>Quản lý Khuyến mãi</h4>
-        <p class="text-muted">Thêm hoặc cập nhật chương trình khuyến mãi</p>
-      </div>
-      <div class="card shadow-sm">
-        <div class="card-header">
-          <strong>Thêm khuyến mãi</strong>
+  <!-- Modal thêm món -->
+  <div class="modal fade" id="addItemModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Thêm món mới</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <div class="card-body">
-          <div class="promo-box mb-3">
-            <div><strong>Khuyến mãi hiện tại:</strong> Mua 2 tặng 1 từ 3–5 giờ chiều (thứ 4 hàng tuần).</div>
-          </div>
-          <form>
+        <div class="modal-body">
+          <form id="addItemForm">
             <div class="mb-3">
-              <label for="promoName" class="form-label">Tên khuyến mãi</label>
-              <input type="text" class="form-control" id="promoName" placeholder="Ví dụ: Mua 2 tặng 1" />
+              <label class="form-label">Tên món</label>
+              <input type="text" class="form-control" id="itemName" required />
             </div>
             <div class="mb-3">
-              <label for="promoDetails" class="form-label">Chi tiết</label>
-              <textarea class="form-control" id="promoDetails" rows="3" placeholder="Mô tả chi tiết khuyến mãi"></textarea>
+              <label class="form-label">Giá (₫)</label>
+              <input type="number" class="form-control" id="itemPrice" required />
             </div>
-            <button type="button" class="btn btn-action" onclick="addPromo()">Thêm khuyến mãi</button>
+            <div class="mb-3">
+              <label class="form-label">Tồn kho</label>
+              <input type="number" class="form-control" id="itemStock" required min="0" />
+            </div>
           </form>
         </div>
-      </div>
-    </div>
-
-    <!-- Modal thêm món -->
-    <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="addItemModalLabel">Thêm món mới</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="itemName" class="form-label">Tên món</label>
-                <input type="text" class="form-control" id="itemName" placeholder="Ví dụ: Trà đào" />
-              </div>
-              <div class="mb-3">
-                <label for="itemPrice" class="form-label">Giá (₫)</label>
-                <input type="number" class="form-control" id="itemPrice" placeholder="Ví dụ: 40000" />
-              </div>
-              <div class="mb-3">
-                <label for="itemStatus" class="form-label">Trạng thái</label>
-                <select class="form-select" id="itemStatus">
-                  <option value="Còn">Còn</option>
-                  <option value="Hết">Hết</option>
-                </select>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-            <button type="button" class="btn btn-action" onclick="addItem()">Thêm</button>
-          </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+          <button class="btn btn-action" id="btnAddConfirm">Thêm</button>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Modal chỉnh sửa món -->
-    <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="editItemModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editItemModalLabel">Chỉnh sửa món</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <input type="hidden" id="editItemId" />
-              <div class="mb-3">
-                <label for="editItemName" class="form-label">Tên món</label>
-                <input type="text" class="form-control" id="editItemName" placeholder="Ví dụ: Trà đào" />
-              </div>
-              <div class="mb-3">
-                <label for="editItemPrice" class="form-label">Giá (₫)</label>
-                <input type="number" class="form-control" id="editItemPrice" placeholder="Ví dụ: 40000" />
-              </div>
-              <div class="mb-3">
-                <label for="editItemStatus" class="form-label">Trạng thái</label>
-                <select class="form-select" id="editItemStatus">
-                  <option value="Còn">Còn</option>
-                  <option value="Hết">Hết</option>
-                </select>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-            <button type="button" class="btn btn-action" onclick="updateItem()">Cập nhật</button>
-          </div>
+  <!-- Modal chỉnh sửa -->
+  <div class="modal fade" id="editItemModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Chỉnh sửa món</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editItemForm">
+            <input type="hidden" id="editItemId" />
+            <div class="mb-3">
+              <label class="form-label">Tên món</label>
+              <input type="text" class="form-control" id="editItemName" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Giá (₫)</label>
+              <input type="number" class="form-control" id="editItemPrice" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Tồn kho</label>
+              <input type="number" class="form-control" id="editItemStock" required min="0" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+          <button class="btn btn-action" id="btnUpdateConfirm">Cập nhật</button>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Bootstrap JS and scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Tải danh sách món khi trang được tải
-      async function loadMenuItems() {
-        const response = await fetch('/api/menu');
-        const items = await response.json();
-        const tableBody = document.getElementById('menuTableBody');
-        tableBody.innerHTML = '';
-        items.forEach(item => {
-          tableBody.innerHTML += `
-            <tr>
-              <td>${item.name}</td>
-              <td>${item.price}₫</td>
-              <td><span class="badge bg-${item.status === 'Còn' ? 'success' : 'danger'}">${item.status}</span></td>
-              <td>
-                <button class="btn btn-sm btn-outline-primary me-1" title="Chỉnh sửa" onclick="openEditModal(${item.id}, '${item.name}', ${item.price}, '${item.status}')"><i class="bi bi-pencil"></i></button>
-                <button class="btn btn-sm btn-outline-danger" title="Xóa" onclick="confirmDelete(${item.id}, '${item.name}')"><i class="bi bi-trash"></i></button>
-              </td>
-            </tr>
-          `;
+  <!-- Toast thông báo -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+    <div id="liveToast" class="toast align-items-center text-bg-success border-0" role="alert">
+      <div class="d-flex">
+        <div class="toast-body" id="toastMsg">Thành công!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Helpers
+    function escapeHtml(unsafe) {
+      if (unsafe == null) return '';
+      return String(unsafe)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    const toastEl = document.getElementById('liveToast');
+    const toastMsg = document.getElementById('toastMsg');
+    const toast = new bootstrap.Toast(toastEl);
+    const menuTableBody = document.getElementById('menuTableBody');
+    const addItemModalEl = document.getElementById('addItemModal');
+    const editItemModalEl = document.getElementById('editItemModal');
+
+    function showToast(message, isError = false) {
+      // reset classes then add correct one
+      toastEl.classList.remove('text-bg-success', 'text-bg-danger');
+      toastEl.classList.add(isError ? 'text-bg-danger' : 'text-bg-success');
+      toastMsg.textContent = message;
+      toast.show();
+    }
+
+    // Load menu items (with cache-busting)
+    async function loadMenuItems() {
+      try {
+        const res = await fetch('/api/menu?ts=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) {
+          showToast('Lỗi khi tải dữ liệu', true);
+          return;
+        }
+        const items = await res.json();
+        menuTableBody.innerHTML = items.map(item => `
+          <tr data-id="${item.id}">
+            <td>${escapeHtml(item.name)}</td>
+            <td>${(item.price || 0).toLocaleString()}₫</td>
+            <td>${(item.stock ?? 0)}</td>
+            <td>
+              <button class="btn-edit btn btn-sm btn-outline-primary me-1"
+                data-id="${item.id}"
+                data-name="${escapeHtml(item.name)}"
+                data-price="${item.price ?? 0}"
+                data-stock="${item.stock ?? 0}">
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button class="btn-delete btn btn-sm btn-outline-danger"
+                data-id="${item.id}"
+                data-name="${escapeHtml(item.name)}">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+        `).join('');
+      } catch (err) {
+        console.error(err);
+        showToast('Không thể kết nối server', true);
+      }
+    }
+
+    // Event delegation for edit/delete buttons
+    menuTableBody.addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      if (btn.classList.contains('btn-delete')) {
+        const id = btn.dataset.id;
+        const name = btn.dataset.name;
+        removeItem(id, name);
+      } else if (btn.classList.contains('btn-edit')) {
+        const id = btn.dataset.id;
+        const name = btn.dataset.name;
+        const price = btn.dataset.price;
+        const stock = btn.dataset.stock;
+        openEdit(id, name, price, stock);
+      }
+    });
+
+    // Delete item
+    async function removeItem(id, name) {
+      if (!confirm(`Xóa món "${name}"?`)) return;
+      try {
+        const res = await fetch(`/api/menu/${id}`, { method: 'DELETE' });
+        if (res.ok) {
+          // remove row from DOM
+          const row = menuTableBody.querySelector(`tr[data-id="${id}"]`);
+          if (row) row.remove();
+          showToast(`Đã xóa "${name}" thành công!`);
+        } else {
+          // try parse error body
+          let errText = 'Lỗi khi xóa';
+          try {
+            const body = await res.json();
+            errText = body.error || JSON.stringify(body);
+          } catch (_) {
+            try { errText = await res.text(); } catch (_) {}
+          }
+          showToast(errText, true);
+        }
+      } catch (err) {
+        console.error(err);
+        showToast('Không thể kết nối server', true);
+      }
+    }
+
+    // Open edit modal and populate fields
+    function openEdit(id, name, price, stock) {
+      document.getElementById('editItemId').value = id;
+      document.getElementById('editItemName').value = name;
+      document.getElementById('editItemPrice').value = price;
+      document.getElementById('editItemStock').value = stock;
+      const modal = bootstrap.Modal.getOrCreateInstance(editItemModalEl);
+      modal.show();
+    }
+
+    // Add item
+    document.getElementById('btnAddConfirm').addEventListener('click', async () => {
+      const name = document.getElementById('itemName').value.trim();
+      const price = parseFloat(document.getElementById('itemPrice').value) || 0;
+      const stock = parseInt(document.getElementById('itemStock').value) || 0;
+      if (!name || price <= 0 || stock < 0) {
+        showToast('Vui lòng nhập đủ thông tin hợp lệ!', true);
+        return;
+      }
+      try {
+        const res = await fetch('/api/menu', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, price, stock })
         });
-      }
-
-      // Mở modal chỉnh sửa
-      function openEditModal(id, name, price, status) {
-        document.getElementById('editItemId').value = id;
-        document.getElementById('editItemName').value = name;
-        document.getElementById('editItemPrice').value = price;
-        document.getElementById('editItemStatus').value = status;
-        new bootstrap.Modal(document.getElementById('editItemModal')).show();
-      }
-
-      // Xóa món
-      async function confirmDelete(id, name) {
-        if (confirm(`Bạn có chắc muốn xóa món "${name}"?`)) {
-          const response = await fetch(`/api/menu/${id}`, { method: 'DELETE' });
-          const result = await response.json();
-          if (response.ok) {
-            alert(result);
-            loadMenuItems(); // Tải lại danh sách sau khi xóa
-          } else {
-            alert(result.error || 'Lỗi khi xóa món');
-          }
-        }
-      }
-
-      // Thêm món
-      async function addItem() {
-        const name = document.getElementById('itemName').value;
-        const price = document.getElementById('itemPrice').value;
-        const status = document.getElementById('itemStatus').value;
-        if (name && price) {
-          const response = await fetch('/api/menu', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, price: parseInt(price), status })
-          });
-          const result = await response.json();
-          if (response.ok) {
-            alert('Thêm món thành công!');
-            document.getElementById('addItemModal').querySelector('.btn-close').click();
-            loadMenuItems(); // Tải lại danh sách sau khi thêm
-          } else {
-            alert(result.error || 'Lỗi khi thêm món');
-          }
+        if (res.ok) {
+          showToast('Thêm món thành công!');
+          const modal = bootstrap.Modal.getOrCreateInstance(addItemModalEl);
+          modal.hide();
+          await loadMenuItems();
         } else {
-          alert('Vui lòng nhập đầy đủ thông tin!');
+          let err = 'Lỗi khi thêm món';
+          try { const b = await res.json(); err = b.error || JSON.stringify(b); } catch(_) { try { err = await res.text(); } catch(_) {} }
+          showToast(err, true);
         }
+      } catch (err) {
+        console.error(err);
+        showToast('Không thể kết nối server', true);
       }
+    });
 
-      // Cập nhật món
-      async function updateItem() {
-        const id = document.getElementById('editItemId').value;
-        const name = document.getElementById('editItemName').value;
-        const price = document.getElementById('editItemPrice').value;
-        const status = document.getElementById('editItemStatus').value;
-        if (name && price) {
-          const response = await fetch(`/api/menu/${id}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, price: parseInt(price), status })
-          });
-          const result = await response.json();
-          if (response.ok) {
-            alert('Cập nhật món thành công!');
-            document.getElementById('editItemModal').querySelector('.btn-close').click();
-            loadMenuItems(); // Tải lại danh sách sau khi cập nhật
-          } else {
-            alert(result.error || 'Lỗi khi cập nhật món');
-          }
+    // Update item
+    document.getElementById('btnUpdateConfirm').addEventListener('click', async () => {
+      const id = document.getElementById('editItemId').value;
+      const name = document.getElementById('editItemName').value.trim();
+      const price = parseFloat(document.getElementById('editItemPrice').value) || 0;
+      const stock = parseInt(document.getElementById('editItemStock').value) || 0;
+      if (!name || price <= 0 || stock < 0) {
+        showToast('Vui lòng nhập đủ thông tin hợp lệ!', true);
+        return;
+      }
+      try {
+        const res = await fetch(`/api/menu/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, price, stock })
+        });
+        if (res.ok) {
+          showToast('Cập nhật thành công!');
+          const modal = bootstrap.Modal.getOrCreateInstance(editItemModalEl);
+          modal.hide();
+          await loadMenuItems();
         } else {
-          alert('Vui lòng nhập đầy đủ thông tin!');
+          let err = 'Lỗi khi cập nhật';
+          try { const b = await res.json(); err = b.error || JSON.stringify(b); } catch(_) { try { err = await res.text(); } catch(_) {} }
+          showToast(err, true);
         }
+      } catch (err) {
+        console.error(err);
+        showToast('Không thể kết nối server', true);
       }
+    });
 
-      // Thêm khuyến mãi (chưa tích hợp API)
-      function addPromo() {
-        const promoName = document.getElementById('promoName').value;
-        const promoDetails = document.getElementById('promoDetails').value;
-        if (promoName && promoDetails) {
-          alert(`Đã thêm khuyến mãi: ${promoName} - ${promoDetails}`);
-          // Logic thêm khuyến mãi (có thể thêm API sau)
-        } else {
-          alert('Vui lòng nhập đầy đủ thông tin khuyến mãi!');
-        }
-      }
-
-      // Tải danh sách món khi trang được tải
-      window.onload = loadMenuItems;
-
-      // Cập nhật trạng thái đơn hàng (chưa tích hợp API)
-      function updateOrderStatus(orderId, status) {
-        alert(`Đơn hàng ${orderId} đã được cập nhật thành "${status}"`);
-        // Logic cập nhật trạng thái đơn hàng
-      }
-    </script>
-  </body>
+    // Initial load
+    document.addEventListener('DOMContentLoaded', loadMenuItems);
+  </script>
+</body>
 </html>
