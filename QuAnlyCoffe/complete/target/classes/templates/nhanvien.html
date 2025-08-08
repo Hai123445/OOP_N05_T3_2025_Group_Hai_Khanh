@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Nhân viên</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body class="container mt-4">
+
+    <h2 class="mb-4">📋 Danh sách Nhân viên</h2>
+
+    <!-- Form thêm nhân viên -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">Thêm Nhân viên</div>
+        <div class="card-body">
+            <form th:action="@{/nhanvien/add}" method="post">
+                <div class="row g-3">
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" name="tenNv" placeholder="Họ tên" required>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" name="sdt" placeholder="Số điện thoại" required>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-success w-100">➕ Thêm</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bảng danh sách -->
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Mã NV</th>
+                <th>Họ tên</th>
+                <th>SĐT</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="nv : ${nhanvien}">
+                <td th:text="${nv.maNv}"></td>
+                <td th:text="${nv.tenNv}"></td>
+                <td th:text="${nv.sdt}"></td>
+                <td>
+                    <!-- Form sửa -->
+                    <form th:action="@{/nhanvien/edit}" method="post" style="display:inline-block;">
+                        <input type="hidden" name="maNv" th:value="${nv.maNv}">
+                        <input type="text" name="tenNv" th:value="${nv.tenNv}" required>
+                        <input type="text" name="sdt" th:value="${nv.sdt}" required>
+                        <button type="submit" class="btn btn-warning btn-sm">✏ Sửa</button>
+                    </form>
+
+                    <!-- Form xóa -->
+                    <form th:action="@{/nhanvien/delete}" method="post" style="display:inline-block;" 
+                          onsubmit="return confirm('Bạn có chắc muốn xóa nhân viên này?');">
+                        <input type="hidden" name="maNv" th:value="${nv.maNv}">
+                        <button type="submit" class="btn btn-danger btn-sm">🗑 Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
