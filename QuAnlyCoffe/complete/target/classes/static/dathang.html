@@ -10,7 +10,42 @@
             margin: 0;
             padding: 0;
         }
-
+         .navbar {
+      display: flex;
+      align-items: center;
+      background-color: #5c4033;
+      padding: 10px 20px;
+      color: #f5e9de;
+    }
+    .navbar .logo {
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+    .navbar .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar .nav-links a {
+      color: #f5e9de;
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 18px;
+    }
+    .navbar .nav-links a:hover {
+      text-decoration: underline;
+    }
+    .navbar .search-bar {
+      margin-left: auto;
+    }
+    .navbar .search-bar input {
+      padding: 5px;
+      border: none;
+      border-radius: 4px;
+      outline: none;
+    }
         .container {
             max-width: 900px;
             margin: 40px auto;
@@ -126,7 +161,19 @@
     </script>
 </head>
 <body>
-
+<!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Cà Phê Hải Khanh Thịnh</div>
+    <div class="nav-links">
+      <a href="index.html">Trang chủ</a>
+      <a href="menu.html">Menu</a>
+      <a href="dathang.html">Đặt hàng</a>
+      <a href="qyanly.html">Quản lý</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Tìm món...">
+    </div>
+  </nav>
 <div class="container">
     <h2>🛒 Đặt Hàng</h2>
 
