@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ServingWebContentApplication",
+            "request": "launch",
+            "mainClass": "com.example.servingwebcontent.ServingWebContentApplication",
+            "projectName": "serving-web-content-complete"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-ServingWebContentApplication<com.example-serving-web-content-complete>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
