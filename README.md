@@ -40,5 +40,16 @@ Sinh viên có thể thêm các chức năng vào chương trình đ�
 
 +class diagram
 
-- <img src="images/class.png">
+- <img src="images/Class.png">
 
++Activity digram
+
+- <img src="images/GiaoDich.png">
+
+- <img src="images/NhanVien.png">
+
+- <img src="images/ham.png">
+
+- <img src="images/themgiaodich.png">
+
+-
