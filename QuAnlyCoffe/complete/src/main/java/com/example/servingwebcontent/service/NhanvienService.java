@@ -4,6 +4,7 @@ import com.example.servingwebcontent.model.Nhanvien;
 import com.example.servingwebcontent.repository.NhanvienRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -29,5 +30,17 @@ public class NhanvienService {
 
     public void deleteById(String id) {
         repo.deleteById(id);
+    }
+
+    // Tạo mã NV dựa trên số lớn nhất trong DB
+    public String generateMaNhanVien() {
+        List<Nhanvien> all = repo.findAll();
+        int maxNum = all.stream()
+                .map(Nhanvien::getMaNv)
+                .filter(code -> code.matches("NV\\d+"))
+                .map(code -> Integer.parseInt(code.substring(2)))
+                .max(Comparator.naturalOrder())
+                .orElse(0);
+        return String.format("NV%03d", maxNum + 1);
     }
 }
