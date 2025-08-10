@@ -36,6 +36,9 @@ Khi làm việc với dữ liệu trong bộ nhớ, dữ liệu câ
 Sinh viên có thể thêm các chức năng vào chương trình để ứng dụng phong phú hơn bằng cách thêm các nghiệp vụ cho bài toán (tùy chọn)
 
 
--Các sơ đồ của ứng dụng
+#Các sơ đồ của ứng dụng
+
 +class diagram
+
+- <img src="images/class.png">
 
