@@ -16,7 +16,7 @@ public class NhanvienController {
 
     @Autowired
     private NhanvienRepository nhanvienRepository;
-
+    
     // Hiển thị danh sách nhân viên
     @GetMapping("/nhanvien")
     public String docNhanVien(Model model) {
