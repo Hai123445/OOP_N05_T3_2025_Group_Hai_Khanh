@@ -3,61 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Quản lý Nhân viên</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        table, th, td { border: 1px solid black; }
+        th, td { padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        form { margin-bottom: 20px; }
+    </style>
 </head>
-<body class="container mt-4">
+<body>
+<h1>Quản lý Nhân viên</h1>
 
-    <h1 class="mb-4">Danh sách Nhân viên</h1>
+<!-- Form thêm nhân viên -->
+<form th:action="@{/nhanvien}" method="post">
+    <label for="maNv">Mã NV:</label>
+    <input type="text" id="maNv" name="maNv" required>
+    <label for="tenNv">Tên NV:</label>
+    <input type="text" id="tenNv" name="tenNv" required>
+    <label for="sdt">Số ĐT:</label>
+    <input type="text" id="sdt" name="sdt" required>
+    <button type="submit">Thêm</button>
+</form>
 
-    <!-- Form thêm nhân viên -->
-    <form th:action="@{/nhanvien/add}" method="post" class="row g-3 mb-4">
-        <div class="col-md-5">
-            <input type="text" name="tenNv" class="form-control" placeholder="Tên nhân viên" required>
-        </div>
-        <div class="col-md-4">
-            <input type="text" name="sdt" class="form-control" placeholder="Số điện thoại" required>
-        </div>
-        <div class="col-md-3">
-            <button type="submit" class="btn btn-primary w-100">Thêm mới</button>
-        </div>
-    </form>
-
-    <!-- Bảng danh sách -->
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>Mã NV</th>
-                <th>Tên NV</th>
-                <th>SĐT</th>
-                <th>Hành động</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="nv : ${nhanvien}">
-                <td th:text="${nv.maNv}"></td>
-                <td th:text="${nv.tenNv}"></td>
-                <td th:text="${nv.sdt}"></td>
-                <td>
-                    <!-- Form sửa -->
-                    <form th:action="@{/nhanvien/edit}" method="post" class="d-inline">
-                        <input type="hidden" name="maNv" th:value="${nv.maNv}">
-                        <input type="text" name="tenNv" th:value="${nv.tenNv}" required>
-                        <input type="text" name="sdt" th:value="${nv.sdt}" required>
-                        <button type="submit" class="btn btn-warning btn-sm">Sửa</button>
-                    </form>
-
-                    <!-- Form xóa -->
-                    <form th:action="@{/nhanvien/delete}" method="post" class="d-inline">
-                        <input type="hidden" name="maNv" th:value="${nv.maNv}">
-                        <button type="submit" class="btn btn-danger btn-sm"
-                                onclick="return confirm('Bạn có chắc muốn xóa nhân viên này?');">
-                            Xóa
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<!-- Bảng danh sách nhân viên -->
+<table>
+    <thead>
+    <tr>
+        <th>Mã NV</th>
+        <th>Tên NV</th>
+        <th>Số ĐT</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="nv : ${listNv}">
+        <td th:text="${nv.maNv}"></td>
+        <td th:text="${nv.tenNv}"></td>
+        <td th:text="${nv.sdt}"></td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>
