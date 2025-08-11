@@ -45,7 +45,7 @@ public class MenuItemController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         if (repo.existsById(id)) {
             repo.deleteById(id);
-            repo.flush(); // ép Hibernate ghi xuống DB ngay
+            repo.flush(); 
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();

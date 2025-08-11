@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách Đơn hàng</title>
+    <link rel="stylesheet" th:href="@{/css/orders.css}" />
+</head>
+<body>
+<h2>Danh sách Đơn hàng</h2>
+
+<div th:if="${orders != null and #lists.isEmpty(orders)}">
+    <p style="text-align:center; color:gray;">Chưa có đơn hàng nào.</p>
+</div>
+
+<div th:if="${orders != null and !#lists.isEmpty(orders)}">
+    <table>
+        <thead>
+        <tr>
+            <th>Mã ĐH</th>
+            <th>Nhân viên</th>
+            <th>Món ăn</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+            <th>Ngày đặt</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.id}"></td>
+            <td th:text="${order.nhanVien.ten}"></td>
+            <td th:text="${order.menuItem.name}"></td>
+            <td th:text="${order.menuItem.price}"></td>
+            <td th:text="${order.quantity}"></td>
+            <td th:text="${order.quantity * order.menuItem.price}"></td>
+            <td th:text="${order.orderDate}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Thêm đơn hàng mới</h2>
+<form th:action="@{/orders/add}" method="post">
+    <select name="nhanVienId" required>
+        <option value="" disabled selected>-- Chọn nhân viên --</option>
+        <option th:each="nv : ${nhanViens}"
+                th:value="${nv.id}"
+                th:text="${nv.ten} + ' (' + nv.id + ')'">
+        </option>
+    </select>
+
+    <select name="menuItemId" required>
+        <option value="" disabled selected>-- Chọn món ăn --</option>
+        <option th:each="item : ${menuItems}"
+                th:value="${item.id}"
+                th:text="${item.name} + ' (' + item.id + ')'">
+        </option>
+    </select>
+
+    <input type="number" name="quantity" placeholder="Số lượng" required min="1">
+    <button type="submit">Thêm</button>
+</form>
+
+<h2>Xoá đơn hàng</h2>
+<form th:action="@{/orders/delete}" method="post">
+    <input type="number" name="id" placeholder="Mã Đơn Hàng" required>
+    <button type="submit">Xoá</button>
+</form>
+</body>
+</html>
