@@ -48,8 +48,31 @@ Sinh viên có thể thêm các chức năng vào chương trình đ�
 
 - <img src="images/NhanVien.png">
 
-- <img src="images/ham.png">
+- <img src="images/sanpham.png">
 
 - <img src="images/themgiaodich.png">
 
--
+- <img src="images/menu.png">
+
+# Giao diện của ứng dụng
+- Trang chủ
+<img src="images/giaodien1.png">
+
+- menu
+
+<img src="images/giaodien2.png">
+
+- Quản lý
+
+<img src="images/giaodien4.png">
+
+- Sản phẩm
+
+<img src="images/giaodien3.png">
+
+- Nhân viên
+
+<img src="images/giaodien5.png">
+
+
+
