@@ -52,5 +52,7 @@ Sinh viên có thể thêm các chức năng vào chương trình đ�
 
 - <img src="images/themgiaodich.png">
 
+- <img src="images/menu.png">
+
 # Giao diện của ứng dụng
 
