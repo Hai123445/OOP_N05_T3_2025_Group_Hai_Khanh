@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/customers")
-public class CustomerController {
+public class KhachHangController {
   @Autowired myDBConnection dbConnection;
     // Lấy danh sách khách hàng
     @GetMapping
