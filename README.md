@@ -48,7 +48,7 @@ Sinh viên có thể thêm các chức năng vào chương trình đ�
 
 - <img src="images/NhanVien.png">
 
-- <img src="images/ham.png">
+- <img src="images/sanpham.png">
 
 - <img src="images/themgiaodich.png">
 
