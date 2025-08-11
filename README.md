@@ -44,8 +44,6 @@ Sinh viên có thể thêm các chức năng vào chương trình đ�
 
 +Activity digram
 
-- <img src="images/GiaoDich.png">
-
 - <img src="images/NhanVien.png">
 
 - <img src="images/sanpham.png">
@@ -53,6 +51,8 @@ Sinh viên có thể thêm các chức năng vào chương trình đ�
 - <img src="images/themgiaodich.png">
 
 - <img src="images/menu.png">
+
+- <img src = "images/khachhang.png">
 
 # Giao diện của ứng dụng
 - Trang chủ
