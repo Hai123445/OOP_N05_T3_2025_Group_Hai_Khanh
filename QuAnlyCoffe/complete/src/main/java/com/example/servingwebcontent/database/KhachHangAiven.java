@@ -1,3 +1,4 @@
+/* 
 package com.example.servingwebcontent.database;
 
 import com.example.servingwebcontent.model.KhachHang;
@@ -84,3 +85,4 @@ public class KhachHangAiven {
         }
     }
 }
+*/
