@@ -4,128 +4,6 @@
 
 # Describe and Analyse the Project 
 
-## Phân tích
-
-04 Đối tượng chính:
-
-```
-
-KhachHang ( TenKH ; Makh ; luongTheoGio )
-SanPham (TenSP ; Masp ; gia)
-NhanVien ( MaNv ; Ten ; sdt)
-Giaodich(MaGd,NgayGD,TenSP,MaSP,TongTien,NvGD)
-
-```
-
-## Miêu tả
-nhanvien: 
- -ten nv:
- -ma nv:
- -luongTheoGio:
-
- ```
- Public class Nhanvien{
-    int MaNv;
-    String TenNv;
-    double luongTheoGio;
-
-    // phuong thuc dac biet vi cung ten voi Lop --> Constructor
-public Nhanvien(int maNv, String tenNv,) {}
-
-public void hienthi(){}
-
-}
-
-```
-khachhang:
- -Ten kh:
- -Ma kh:
- -sdt:
-```
-public class KhachHang{
-    int MaKh;
-    String TenKh;
-    String sdt;
-
-
-
-    // phuong thuc dac biet vi cung ten voi Lop --> Constructor
-   public KhachHang(int maKh, String tenKh, String sdt) {
-    public void hienthi(){
-    }
-   }
-}
-```
- .
-sanpham:
- -ten sp:
- -ma sp:
- -gia sp:
- .
- ```
- public class SanPham {
-    int MaSp;
-    String TenSp;
-    int GiaSp;
-    // phuong thuc
-
-    // phuong thuc dac biet/constructor co ten trung ten class/ khoi tao Class
-    // SanPham
-    public SanPham(int maSp, String tenSp, int giaSp) {
-    }
-
-    public void In() {
-    }
-}
- ```
-public class Giaodich 
-
-    //bien mieu ta cho giao dich
-    String MaGiaoDich;
-    String NgayThangNamGiaoDich;
-    String GioGiaoDich;
-    double TongTien;
-
-
-    //phuong thuc hoat dong
-public Giaodich(String mgd,String ngd,String ggd,double tt){
-    this.MaGiaoDich = mgd;
-    this.NgayThangNamGiaoDich = ngd;
-    this.GioGiaoDich = ggd;
-    this.TongTien = tt; 
-}
-public void hienthi(){
-    
-}
-```
-https://online.visual-paradigm.com/share.jsp?id=343135383732382d31
-https://online.visual-paradigm.com/share.jsp?id=343135383734342d31
-
-```
-# Sơ đồ hoạt động
-<img src="images/Untitled.png">
-<img src="images/sanpham.png">
-<img src="images/GiaoDich.png">
-<img src="images/NhanVien.png"> 
-
-# 5 phương thức hoạt động trong ứng dụng quản lí quán cà phê
-1. Phương thức hiển thị giao dịch theo ngày và nhân viên
-2. Phương thức tìm kiếm sản phẩm theo tên
-3. Phương 
-2.class HoatDongQuan()
-
-public Nhanvien nv;
-    public KhachHang kh;
-    public Giaodich gd;
-    public SanPham sp;
-
-public static void hienthigdtrongngay(){
-   }
-   
-public static void timKiemTheoTen(ArrayList<SanPham> danhSachSanPham, Scanner sc) {
-   }
-
-
 # Thành viên:
 
 Trịnh Tiến Hải (Mã SV:24100185; github:Hai123445)
@@ -134,4 +12,44 @@ Nguyễn Đức Khanh (Mã Sv: 24100401; github: duckhanh1301)
 
 Đinh Đức Thịnh (Mã Sv:24100005; github:Manx-bit)
 
-Nguyễn Lệ Thu
+#
+Nội dung 01: Xây dựng ứng dụng quản lý quán cà phê Hải-Khanh-Thịnh
+
+Yêu cầu:
+
+-Giao diện Java Spring Boot.
+
+-Có chức năng quản lý sản phẩm
++Thêm, sửa, xóa các sản phẩm 
+
++Hiển thị thông tin những sản phẩm
+
+-Có chức năng quản lý nhân viên
++Thêm, sửa, xóa đơn hàng,thông tin nhân 
++Hiển thị thông tin của nhân viên
+
+Dữ liệu được lưu trữ xuống file nhị phân
+
+Cần tạo các lớp liên quan đến khách hàng, sản phẩm , và đơn hàng để đọc, ghi xuống 1 hay nhiều file.
+Khi làm việc với dữ liệu trong bộ nhớ, dữ liệu cần được lưu trữ dưới dạng các Collection tùy chọn như ArrayList, LinkedList, Map, ....
+
+Sinh viên có thể thêm các chức năng vào chương trình để ứng dụng phong phú hơn bằng cách thêm các nghiệp vụ cho bài toán (tùy chọn)
+
+
+#Các sơ đồ của ứng dụng
+
++class diagram
+
+- <img src="images/Class.png">
+
++Activity digram
+
+- <img src="images/GiaoDich.png">
+
+- <img src="images/NhanVien.png">
+
+- <img src="images/ham.png">
+
+- <img src="images/themgiaodich.png">
+
+-
