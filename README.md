@@ -6,7 +6,7 @@
 
 # Thành viên:
 
-Trịnh Tiến Hải (Mã SV:24100185; github:Hai123445)
+Trịnh Tiến Hải (Mã SV:24100185; github:Hai123445,tienhai271006)
 
 Nguyễn Đức Khanh (Mã Sv: 24100401; github: duckhanh1301)
 
