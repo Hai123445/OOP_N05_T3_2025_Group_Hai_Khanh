@@ -61,7 +61,8 @@ Sinh viên có thể thêm các chức năng vào chương trình đ�
 - menu
 
 <img src="images/giaodien2.png">
-
+- Đặt hàng
+<img src="images/image.png">
 - Quản lý
 
 <img src="images/giaodien4.png">
