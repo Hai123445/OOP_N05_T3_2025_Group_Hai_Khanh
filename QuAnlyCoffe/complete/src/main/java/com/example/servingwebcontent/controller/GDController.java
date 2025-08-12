@@ -93,7 +93,7 @@ public class GDController {
         return String.format("GD%03d", max);
     }
     
-    @PostMapping("/dathang")
+ @PostMapping("/dathang")
 @ResponseBody
 public String datHang(@RequestParam String maKH, @RequestBody Map<String, Integer> gioHang) {
     Connection conn = null;
@@ -105,9 +105,9 @@ public String datHang(@RequestParam String maKH, @RequestBody Map<String, Intege
         conn = dbConnection.getConnection();
         conn.setAutoCommit(false);
 
-         String maGD = "GD" + UUID.randomUUID().toString().substring(0, 6);
+        String maGD = "GD" + UUID.randomUUID().toString().substring(0, 6);
 
-        String sqlGetGia = "SELECT Gia FROM sanpham WHERE MaSp = ?";
+        String sqlGetGia = "SELECT price FROM menu_item WHERE id = ?";
         stmtGia = conn.prepareStatement(sqlGetGia);
 
         String sqlInsert = "INSERT INTO donhang(MaGd, MaKh, MaSp, TongSoSp, TongTien) VALUES (?, ?, ?, ?, ?)";
@@ -117,19 +117,20 @@ public String datHang(@RequestParam String maKH, @RequestBody Map<String, Intege
             String maSP = entry.getKey();
             int soLuong = entry.getValue();
 
-            // Lấy giá sản phẩm
-            stmtGia.setString(1, maSP);
+            // Nếu ID là số nguyên thì dùng parseInt
+            stmtGia.setInt(1, Integer.parseInt(maSP));
+
             rs = stmtGia.executeQuery();
 
             if (rs.next()) {
-                double gia = rs.getDouble("Gia");
+                double gia = rs.getDouble("price");
                 double tongTien = gia * soLuong;
 
                 stmt.setString(1, maGD);
                 stmt.setString(2, maKH);
-                stmt.setString(3, maSP);
-                stmt.setInt(4, soLuong); // Tổng số sản phẩm
-                stmt.setDouble(5, tongTien); // Tổng tiền = giá × số lượng
+                stmt.setInt(3, Integer.parseInt(maSP)); // MaSp lưu dạng số
+                stmt.setInt(4, soLuong);
+                stmt.setDouble(5, tongTien);
                 stmt.addBatch();
             } else {
                 return "Sản phẩm không tồn tại: " + maSP;
